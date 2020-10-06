@@ -30,6 +30,9 @@ penguins_madeup_wide
 #Great visual for understanding pivot_longer and pivot_wider
 #https://www.dropbox.com/s/a6o75zj443b2rv3/tidyr-longer-wider-modified.gif?dl=0
 
+??gather
+??spread
+
 penguins_madeup_wide %>%
   pivot_longer(
     cols = starts_with("body_mass"),
@@ -47,7 +50,30 @@ penguins_madeup_long <- penguins_madeup_wide %>%
 penguins_madeup_long
 
 penguins_madeup_long %>%
-  ggplot(aes(x=measurement, y=body_mass, 
-             group=name, color=name)) +
+  mutate(name = fct_reorder2(name, measurement, body_mass)) %>%
+  ggplot(aes(x = measurement, y = body_mass,
+             group = name, color = name)) +
   geom_point() +
   geom_line()
+
+library(ggrepel)
+
+ggplot(penguins_madeup_long, 
+       aes(x = measurement, y = body_mass, group = name, color = name)) +
+  geom_point() +
+  geom_line() +
+  guides(color = FALSE) +
+  geom_label_repel(data = penguins_madeup_long %>% filter(measurement == 3),
+                   aes(label = name)) + 
+  labs(
+    x = "Measurement",
+    y = "Body mass (g)",
+    title = "Body mass measurements of penguins",
+    subtitle = "Simulated data",
+    caption = "Do you recognize the names of these penguins? 
+    See imdb.com/title/tt0366548 for a hint!"
+  )
+
+penguins_madeup_long
+
+
