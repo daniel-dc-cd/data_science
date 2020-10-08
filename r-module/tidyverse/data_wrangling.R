@@ -76,4 +76,54 @@ ggplot(penguins_madeup_long,
 
 penguins_madeup_long
 
+#Column-wise operations
+#https://cran.r-project.org/web/packages/dplyr/vignettes/colwise.html
 
+penguins_madeup_wide
+
+penguins_madeup_wide %>%
+  summarise(
+    body_mass_1_avg = mean(body_mass_1),
+    body_mass_2_avg = mean(body_mass_2),
+    body_mass_3_avg = mean(body_mass_3)
+  )
+
+penguins_madeup_wide %>%
+  summarise(across(starts_with("body_mass"),mean))
+
+penguins_madeup_wide %>%
+  summarise(
+    sample_mean = across(starts_with("body_mass"), mean),
+    sample_sd = across(starts_with("body_mass"), sd),
+  )
+
+penguins_madeup_wide %>%
+  summarise(across(
+    starts_with("body_mass"),
+    list(sample_mean = mean, sample_sd = sd)
+  ))
+
+# Exercise: turn the data we just created into this table
+## # A tibble: 3 x 3
+##   measurement sample_mean sample_sd
+##   <chr>             <dbl>     <dbl>
+## 1 1                 4292.      682.
+## 2 2                 4049.     1203.
+## 3 3                 4609       777.
+
+#Row-wise operations
+#https://dplyr.tidyverse.org/articles/rowwise.html
+
+penguins_madeup_wide
+
+penguins_madeup_wide <- penguins_madeup_wide %>%
+  rowwise() %>%
+  mutate(body_mass_avg = mean(c_across(starts_with("body_mass"))))
+
+penguins_madeup_wide
+
+penguins_madeup_wide <- penguins_madeup_wide %>%
+  rowwise() %>%
+  mutate(body_mass_median = median(c_across(starts_with("body_mass"))))
+
+penguins_madeup_wide
