@@ -4,6 +4,7 @@
 #### Important Links
 * [Learning Platform](http://learn.codingdojo.com)
 * [Matrix DS Files](https://codingdojo.platform.matrixds.com/projects)
+* [Piazza Platform](https://piazza.com/coding_dojo/fall2020/datascienceimmersive/resources)
 
 #### Corporation
 * [IBM Advanced Data Science](https://www.coursera.org/specializations/advanced-data-science-ibm)
