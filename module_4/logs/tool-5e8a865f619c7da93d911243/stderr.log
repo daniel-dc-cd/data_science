@@ -1,0 +1,22 @@
+[I 18:31:17.747 LabApp] Writing notebook server cookie secret to /app/jupyter/jupyterhub_cookie_secret
+[W 18:31:17.965 LabApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
+[I 18:31:17.975 LabApp] JupyterLab extension loaded from /opt/conda/lib/python3.7/site-packages/jupyterlab
+[I 18:31:17.975 LabApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+[I 18:31:17.977 LabApp] Serving notebooks from local directory: /home/matrix
+[I 18:31:17.977 LabApp] The Jupyter Notebook is running at:
+[I 18:31:17.977 LabApp] http://tool-5e8a865f619c7da93d911243-qfbq9:8888/
+[I 18:31:17.977 LabApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 18:35:45.656 LabApp] 302 GET / (10.60.20.117) 0.85ms
+[I 18:35:48.758 LabApp] Build is up to date
+[I 18:35:49.371 LabApp] Writing notebook-signing key to /app/jupyter/secret_file
+[W 18:35:49.372 LabApp] Notebook Day_1 (Heuristic Model)/cost_function_assignment.ipynb is not trusted
+[I 18:35:50.022 LabApp] Kernel started: b7fbb946-7676-48f7-a494-c326cfb87ae7
+[I 18:36:53.418 LabApp] New terminal with automatic name: 1
+TermSocket.open: 1
+TermSocket.open: Opened 1
+[I 18:37:21.275 LabApp] EOF on FD 32; stopping reading
+[I 18:37:21.376 LabApp] Terminal 1 closed
+Websocket closed
+[I 18:42:52.316 LabApp] Starting buffering for b7fbb946-7676-48f7-a494-c326cfb87ae7:60868c7c-ced1-41ee-ac4f-ff926f58d32b
+[I 18:42:54.041 LabApp] Restoring connection for b7fbb946-7676-48f7-a494-c326cfb87ae7:60868c7c-ced1-41ee-ac4f-ff926f58d32b
+[I 18:56:06.922 LabApp] Starting buffering for b7fbb946-7676-48f7-a494-c326cfb87ae7:60868c7c-ced1-41ee-ac4f-ff926f58d32b

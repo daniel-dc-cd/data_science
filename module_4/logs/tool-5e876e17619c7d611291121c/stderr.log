@@ -1,0 +1,125 @@
+[I 10:10:53.348 LabApp] Writing notebook server cookie secret to /app/jupyter/jupyterhub_cookie_secret
+[W 10:10:53.598 LabApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
+[I 10:10:53.608 LabApp] JupyterLab extension loaded from /opt/conda/lib/python3.7/site-packages/jupyterlab
+[I 10:10:53.608 LabApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+[I 10:10:53.610 LabApp] Serving notebooks from local directory: /home/matrix
+[I 10:10:53.610 LabApp] The Jupyter Notebook is running at:
+[I 10:10:53.610 LabApp] http://tool-5e876e17619c7d611291121c-vpv5f:8888/
+[I 10:10:53.610 LabApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 10:11:17.834 LabApp] 302 GET / (10.60.20.117) 0.72ms
+[I 10:11:23.141 LabApp] 301 GET /lab/workspaces/auto-f/?clone (10.60.20.117) 0.75ms
+[I 10:11:23.976 LabApp] 301 GET /lab/workspaces/auto-f/?clone=auto-f (10.60.20.117) 0.93ms
+[I 10:11:24.630 LabApp] 301 GET /lab/workspaces/auto-Q/?clone=auto-f (10.60.20.117) 0.84ms
+[I 10:11:25.279 LabApp] 301 GET /lab/workspaces/auto-k/?clone=auto-Q (10.60.20.117) 0.78ms
+[I 10:11:25.929 LabApp] 301 GET /lab/workspaces/auto-p/?clone=auto-k (10.60.20.117) 0.67ms
+[I 10:11:26.629 LabApp] 301 GET /lab/workspaces/auto-1/?clone=auto-p (10.60.20.117) 0.70ms
+[I 10:11:27.270 LabApp] 301 GET /lab/workspaces/auto-a/?clone=auto-1 (10.60.20.117) 1.26ms
+[I 10:11:27.899 LabApp] 301 GET /lab/workspaces/auto-b/?clone=auto-a (10.60.20.117) 0.69ms
+[I 10:11:30.037 LabApp] 301 GET /lab/workspaces/auto-e/?clone=auto-b (10.60.20.117) 0.71ms
+[I 10:11:32.232 LabApp] 301 GET /lab/workspaces/auto-I/?clone=auto-e (10.60.20.117) 0.73ms
+[I 10:11:32.928 LabApp] 301 GET /lab/workspaces/auto-V/?clone=auto-I (10.60.20.117) 0.76ms
+[I 10:11:33.542 LabApp] 301 GET /lab/workspaces/auto-5/?clone=auto-V (10.60.20.117) 0.73ms
+[I 10:11:34.280 LabApp] 301 GET /lab/workspaces/auto-a/?clone=auto-5 (10.60.20.117) 0.75ms
+[I 10:11:35.891 LabApp] 301 GET /lab/workspaces/auto-J/?clone=auto-a (10.60.20.117) 0.68ms
+[I 10:11:38.113 LabApp] 301 GET /lab/workspaces/auto-B/?clone=auto-J (10.60.20.117) 0.81ms
+[I 10:11:39.952 LabApp] 301 GET /lab/workspaces/auto-n/?clone=auto-B (10.60.20.117) 0.83ms
+[I 10:11:41.688 LabApp] 301 GET /lab/workspaces/auto-X/?clone=auto-n (10.60.20.117) 0.79ms
+[I 10:11:43.407 LabApp] 301 GET /lab/workspaces/auto-N/?clone=auto-X (10.60.20.117) 0.93ms
+[I 10:11:44.046 LabApp] 301 GET /lab/workspaces/auto-u/?clone=auto-N (10.60.20.117) 0.73ms
+[I 10:11:46.151 LabApp] 301 GET /lab/workspaces/auto-8/?clone=auto-u (10.60.20.117) 0.98ms
+[I 10:11:48.078 LabApp] 301 GET /lab/workspaces/auto-G/?clone=auto-8 (10.60.20.117) 0.81ms
+[I 10:11:51.315 LabApp] 301 GET /lab/workspaces/auto-D/?clone=auto-G (10.60.20.117) 0.73ms
+[I 10:11:51.935 LabApp] 301 GET /lab/workspaces/auto-7/?clone=auto-D (10.60.20.117) 0.84ms
+[I 10:11:52.547 LabApp] 301 GET /lab/workspaces/auto-P/?clone=auto-7 (10.60.20.117) 0.73ms
+[I 10:11:53.177 LabApp] 301 GET /lab/workspaces/auto-s/?clone=auto-P (10.60.20.117) 0.74ms
+[I 10:11:53.718 LabApp] 301 GET /lab/workspaces/auto-R/?clone=auto-s (10.60.20.117) 0.80ms
+[I 10:11:59.847 LabApp] 302 GET / (10.60.20.117) 0.57ms
+[I 10:12:00.456 LabApp] 301 GET /lab/workspaces/auto-A/?clone (10.60.20.117) 0.80ms
+[I 10:12:01.357 LabApp] 301 GET /lab/workspaces/auto-l/?clone=auto-A (10.60.20.117) 0.80ms
+[I 10:12:02.026 LabApp] 301 GET /lab/workspaces/auto-I/?clone=auto-l (10.60.20.117) 0.82ms
+[I 10:12:21.564 LabApp] Writing notebook server cookie secret to /app/jupyter/jupyterhub_cookie_secret
+[W 10:12:21.804 LabApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
+[I 10:12:21.815 LabApp] JupyterLab extension loaded from /opt/conda/lib/python3.7/site-packages/jupyterlab
+[I 10:12:21.815 LabApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+[I 10:12:21.817 LabApp] Serving notebooks from local directory: /home/matrix
+[I 10:12:21.817 LabApp] The Jupyter Notebook is running at:
+[I 10:12:21.817 LabApp] http://tool-5e876e17619c7d611291121c-h4zb8:8888/
+[I 10:12:21.817 LabApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 10:12:52.821 LabApp] 302 GET / (10.60.20.117) 0.69ms
+[I 10:12:53.438 LabApp] 301 GET /lab/workspaces/auto-a/?clone (10.60.20.117) 0.94ms
+[I 10:12:54.122 LabApp] 301 GET /lab/workspaces/auto-M/?clone=auto-a (10.60.20.117) 0.80ms
+[I 10:12:54.618 LabApp] 301 GET /lab/workspaces/auto-x/?clone=auto-M (10.60.20.117) 0.92ms
+[I 10:12:55.228 LabApp] 301 GET /lab/workspaces/auto-v/?clone=auto-x (10.60.20.117) 0.69ms
+[I 10:12:55.887 LabApp] 301 GET /lab/workspaces/auto-1/?clone=auto-v (10.60.20.117) 0.98ms
+[I 10:12:56.524 LabApp] 301 GET /lab/workspaces/auto-E/?clone=auto-1 (10.60.20.117) 0.90ms
+[I 10:12:57.201 LabApp] 301 GET /lab/workspaces/auto-9/?clone=auto-E (10.60.20.117) 0.74ms
+[I 10:12:57.840 LabApp] 301 GET /lab/workspaces/auto-K/?clone=auto-9 (10.60.20.117) 0.86ms
+[I 10:12:58.474 LabApp] 301 GET /lab/workspaces/auto-w/?clone=auto-K (10.60.20.117) 0.73ms
+[I 10:12:59.143 LabApp] 301 GET /lab/workspaces/auto-P/?clone=auto-w (10.60.20.117) 0.88ms
+[I 10:12:59.782 LabApp] 301 GET /lab/workspaces/auto-o/?clone=auto-P (10.60.20.117) 0.78ms
+[I 10:13:00.296 LabApp] 301 GET /lab/workspaces/auto-K/?clone=auto-o (10.60.20.117) 0.86ms
+[I 10:13:00.933 LabApp] 301 GET /lab/workspaces/auto-O/?clone=auto-K (10.60.20.117) 0.80ms
+[I 10:13:01.539 LabApp] 301 GET /lab/workspaces/auto-x/?clone=auto-O (10.60.20.117) 0.84ms
+[I 10:13:02.181 LabApp] 301 GET /lab/workspaces/auto-J/?clone=auto-x (10.60.20.117) 0.81ms
+[I 10:13:02.841 LabApp] 301 GET /lab/workspaces/auto-o/?clone=auto-J (10.60.20.117) 0.76ms
+[I 10:13:03.519 LabApp] 301 GET /lab/workspaces/auto-E/?clone=auto-o (10.60.20.117) 0.77ms
+[I 10:13:04.341 LabApp] 301 GET /lab/workspaces/auto-Z/?clone=auto-E (10.60.20.117) 0.73ms
+[I 10:13:04.997 LabApp] 301 GET /lab/workspaces/auto-c/?clone=auto-Z (10.60.20.117) 0.73ms
+[I 10:13:05.648 LabApp] 301 GET /lab/workspaces/auto-H/?clone=auto-c (10.60.20.117) 0.73ms
+[I 10:13:06.193 LabApp] 301 GET /lab/workspaces/auto-7/?clone=auto-H (10.60.20.117) 0.77ms
+[I 10:13:06.661 LabApp] 301 GET /lab/workspaces/auto-9/?clone=auto-7 (10.60.20.117) 0.79ms
+[I 10:13:07.319 LabApp] 301 GET /lab/workspaces/auto-u/?clone=auto-9 (10.60.20.117) 1.01ms
+[I 10:13:07.933 LabApp] 301 GET /lab/workspaces/auto-P/?clone=auto-u (10.60.20.117) 0.76ms
+[I 10:13:08.607 LabApp] 301 GET /lab/workspaces/auto-v/?clone=auto-P (10.60.20.117) 0.78ms
+[I 10:13:09.320 LabApp] 301 GET /lab/workspaces/auto-3/?clone=auto-v (10.60.20.117) 0.98ms
+[I 10:13:09.957 LabApp] 301 GET /lab/workspaces/auto-l/?clone=auto-3 (10.60.20.117) 0.72ms
+[I 10:13:10.580 LabApp] 301 GET /lab/workspaces/auto-C/?clone=auto-l (10.60.20.117) 0.71ms
+[I 10:13:11.188 LabApp] 301 GET /lab/workspaces/auto-b/?clone=auto-C (10.60.20.117) 0.98ms
+[I 10:13:11.808 LabApp] 301 GET /lab/workspaces/auto-J/?clone=auto-b (10.60.20.117) 1.02ms
+[I 10:13:12.452 LabApp] 301 GET /lab/workspaces/auto-U/?clone=auto-J (10.60.20.117) 0.68ms
+[I 10:13:13.072 LabApp] 301 GET /lab/workspaces/auto-4/?clone=auto-U (10.60.20.117) 0.84ms
+[I 10:13:13.745 LabApp] 301 GET /lab/workspaces/auto-f/?clone=auto-4 (10.60.20.117) 0.71ms
+[I 10:13:14.528 LabApp] 301 GET /lab/workspaces/auto-o/?clone=auto-f (10.60.20.117) 1.68ms
+[I 10:13:15.128 LabApp] 301 GET /lab/workspaces/auto-R/?clone=auto-o (10.60.20.117) 0.80ms
+[I 10:13:15.767 LabApp] 301 GET /lab/workspaces/auto-B/?clone=auto-R (10.60.20.117) 0.73ms
+[I 10:13:16.386 LabApp] 301 GET /lab/workspaces/auto-z/?clone=auto-B (10.60.20.117) 1.08ms
+[I 10:13:16.969 LabApp] 301 GET /lab/workspaces/auto-v/?clone=auto-z (10.60.20.117) 1.14ms
+[I 10:13:17.564 LabApp] 301 GET /lab/workspaces/auto-m/?clone=auto-v (10.60.20.117) 0.82ms
+[I 10:13:18.146 LabApp] 301 GET /lab/workspaces/auto-o/?clone=auto-m (10.60.20.117) 0.83ms
+[I 10:13:18.754 LabApp] 301 GET /lab/workspaces/auto-P/?clone=auto-o (10.60.20.117) 0.76ms
+[I 10:13:19.337 LabApp] 301 GET /lab/workspaces/auto-Z/?clone=auto-P (10.60.20.117) 0.77ms
+[I 10:13:19.950 LabApp] 301 GET /lab/workspaces/auto-S/?clone=auto-Z (10.60.20.117) 0.80ms
+[I 10:13:20.547 LabApp] 301 GET /lab/workspaces/auto-6/?clone=auto-S (10.60.20.117) 0.75ms
+[I 10:13:21.129 LabApp] 301 GET /lab/workspaces/auto-V/?clone=auto-6 (10.60.20.117) 0.80ms
+[I 10:13:21.721 LabApp] 301 GET /lab/workspaces/auto-l/?clone=auto-V (10.60.20.117) 0.74ms
+[I 10:13:22.334 LabApp] 301 GET /lab/workspaces/auto-R/?clone=auto-l (10.60.20.117) 0.72ms
+[I 10:13:22.952 LabApp] 301 GET /lab/workspaces/auto-j/?clone=auto-R (10.60.20.117) 0.81ms
+[I 10:13:23.584 LabApp] 301 GET /lab/workspaces/auto-J/?clone=auto-j (10.60.20.117) 1.03ms
+[I 10:13:24.185 LabApp] 301 GET /lab/workspaces/auto-K/?clone=auto-J (10.60.20.117) 0.82ms
+[I 10:13:24.959 LabApp] 301 GET /lab/workspaces/auto-4/?clone=auto-K (10.60.20.117) 0.73ms
+[I 10:13:25.556 LabApp] 301 GET /lab/workspaces/auto-r/?clone=auto-4 (10.60.20.117) 0.89ms
+[I 10:13:26.145 LabApp] 301 GET /lab/workspaces/auto-j/?clone=auto-r (10.60.20.117) 0.73ms
+[I 10:13:26.741 LabApp] 301 GET /lab/workspaces/auto-m/?clone=auto-j (10.60.20.117) 0.83ms
+[I 10:13:27.327 LabApp] 301 GET /lab/workspaces/auto-s/?clone=auto-m (10.60.20.117) 0.82ms
+[I 10:13:27.898 LabApp] 301 GET /lab/workspaces/auto-s/?clone=auto-s (10.60.20.117) 0.80ms
+[I 10:13:28.493 LabApp] 301 GET /lab/workspaces/auto-r/?clone=auto-s (10.60.20.117) 0.76ms
+[I 10:13:29.096 LabApp] 301 GET /lab/workspaces/auto-R/?clone=auto-r (10.60.20.117) 0.69ms
+[I 10:13:29.724 LabApp] 301 GET /lab/workspaces/auto-c/?clone=auto-R (10.60.20.117) 0.75ms
+[I 10:13:30.325 LabApp] 301 GET /lab/workspaces/auto-j/?clone=auto-c (10.60.20.117) 0.79ms
+[I 10:13:30.912 LabApp] 301 GET /lab/workspaces/auto-l/?clone=auto-j (10.60.20.117) 0.76ms
+[I 10:13:31.536 LabApp] 301 GET /lab/workspaces/auto-U/?clone=auto-l (10.60.20.117) 0.77ms
+[I 10:13:32.123 LabApp] 301 GET /lab/workspaces/auto-v/?clone=auto-U (10.60.20.117) 0.76ms
+[I 10:13:32.734 LabApp] 301 GET /lab/workspaces/auto-6/?clone=auto-v (10.60.20.117) 0.92ms
+[I 10:13:33.324 LabApp] 301 GET /lab/workspaces/auto-V/?clone=auto-6 (10.60.20.117) 0.83ms
+[I 10:13:33.929 LabApp] 301 GET /lab/workspaces/auto-3/?clone=auto-V (10.60.20.117) 0.75ms
+[I 10:13:34.507 LabApp] 301 GET /lab/workspaces/auto-S/?clone=auto-3 (10.60.20.117) 0.81ms
+[I 10:13:35.337 LabApp] 301 GET /lab/workspaces/auto-a/?clone=auto-S (10.60.20.117) 0.82ms
+[I 10:13:36.012 LabApp] 301 GET /lab/workspaces/auto-V/?clone=auto-a (10.60.20.117) 0.82ms
+[I 10:13:36.614 LabApp] 301 GET /lab/workspaces/auto-m/?clone=auto-V (10.60.20.117) 0.78ms
+[I 10:13:37.235 LabApp] 301 GET /lab/workspaces/auto-e/?clone=auto-m (10.60.20.117) 0.85ms
+[I 10:13:37.867 LabApp] 301 GET /lab/workspaces/auto-S/?clone=auto-e (10.60.20.117) 0.84ms
+[I 10:13:38.487 LabApp] 301 GET /lab/workspaces/auto-n/?clone=auto-S (10.60.20.117) 0.83ms
+[I 10:13:39.122 LabApp] 301 GET /lab/workspaces/auto-n/?clone=auto-n (10.60.20.117) 0.87ms
+[I 10:13:39.739 LabApp] 301 GET /lab/workspaces/auto-R/?clone=auto-n (10.60.20.117) 0.85ms
+[I 10:13:40.352 LabApp] 301 GET /lab/workspaces/auto-D/?clone=auto-R (10.60.20.117) 0.77ms
+[I 10:13:40.969 LabApp] 301 GET /lab/workspaces/auto-U/?clone=auto-D (10.60.20.117) 0.79ms

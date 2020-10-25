@@ -1,0 +1,1619 @@
+1585265685168:df <- read.csv("~/data/seattle_weather_1948-2017.csv")
+1585265716893:numrow = 25549
+1585265772132:heuristic_df <- data.frame("yesterday" = 0*numrows)
+1585266098137:heuristic_df <- data.frame("Yesterday" = 0,
+1585266098153:"Today" = 0,
+1585266098172:"Tomorrow" = 0,
+1585266098190:"Guess" = FALSE,
+1585266098210:"Rain Tomorrow" = FALSE,
+1585266098231:"Correct" = FALSE,
+1585266098249:"True Positive" = FALSE,
+1585266098268:"False Positive" = FALSE,
+1585266098292:"True Negative" = FALSE,
+1585266098311:"False Negative" = FALSE)
+1585346427722:df[i-2,2]
+1585607507875:for (z in 1:numrows){
+1585607507902:i = z + 2
+1585607507924:yesterday = df[i-2,2]
+1585607507949:today = df[i-1,2]
+1585607507970:tomorrow = df[i,2]
+1585607507989:if (tomorrow == 0){
+1585607508015:rain_tomorrow = FALSE
+1585607508036:}else{
+1585607508059:rain_tomorrow = TRUE
+1585607508082:}
+1585607508102:heuristic_df[z,1] = yesterday
+1585607508123:heuristic_df[z,2] = today
+1585607508144:heuristic_df[z,3] = tomorrow
+1585607508165:heuristic_df[z,4] = FALSE # Label all guesses as false
+1585607508185:heuristic_df[z,5] = rain_tomorrow
+1585607508224:if ((today > 0) & (yesterday > 0)){
+1585607508250:heuristic_df[z,4] = TRUE
+1585607508272:}
+1585607508295:if (heuristic_df[z,4] == heuristic_df[z,5]){
+1585607508324:heuristic_df[z,6] = TRUE
+1585607508350:if (heuristic_df[z,4] == TRUE){
+1585607508378:heuristic_df[z,7] = TRUE #true positive
+1585607508405:}else{
+1585607508436:heuristic_df[z,9] = TRUE #True negative
+1585607508463:}
+1585607508492:}else{
+1585607508519:heuristic_df[z,6] = FALSE
+1585607508552:if (heuristic_df[z,4] == TRUE){
+1585607508582:heuristic_df[z,7] = TRUE #false positive
+1585607508613:}else{
+1585607508647:heuristic_df[z,9] = TRUE #false negative
+1585607508679:}
+1585607508706:}
+1585607508731:}
+1585607515851:numrow = 25549
+1585607518340:heuristic_df <- data.frame("Yesterday" = 0,
+1585607518358:"Today" = 0,
+1585607518380:"Tomorrow" = 0,
+1585607518400:"Guess" = FALSE,
+1585607518421:"Rain Tomorrow" = FALSE,
+1585607518444:"Correct" = FALSE,
+1585607518467:"True Positive" = FALSE,
+1585607518491:"False Positive" = FALSE,
+1585607518515:"True Negative" = FALSE,
+1585607518534:"False Negative" = FALSE)
+1585607520190:for (z in 1:numrows){
+1585607520210:i = z + 2
+1585607520231:yesterday = df[i-2,2]
+1585607520249:today = df[i-1,2]
+1585607520267:tomorrow = df[i,2]
+1585607520285:if (tomorrow == 0){
+1585607520303:rain_tomorrow = FALSE
+1585607520320:}else{
+1585607520336:rain_tomorrow = TRUE
+1585607520353:}
+1585607520370:heuristic_df[z,1] = yesterday
+1585607520386:heuristic_df[z,2] = today
+1585607520402:heuristic_df[z,3] = tomorrow
+1585607520418:heuristic_df[z,4] = FALSE # Label all guesses as false
+1585607520433:heuristic_df[z,5] = rain_tomorrow
+1585607520461:if ((today > 0) & (yesterday > 0)){
+1585607520475:heuristic_df[z,4] = TRUE
+1585607520492:}
+1585607520507:if (heuristic_df[z,4] == heuristic_df[z,5]){
+1585607520523:heuristic_df[z,6] = TRUE
+1585607520538:if (heuristic_df[z,4] == TRUE){
+1585607520560:heuristic_df[z,7] = TRUE #true positive
+1585607520575:}else{
+1585607520591:heuristic_df[z,9] = TRUE #True negative
+1585607520605:}
+1585607520623:}else{
+1585607520637:heuristic_df[z,6] = FALSE
+1585607520656:if (heuristic_df[z,4] == TRUE){
+1585607520671:heuristic_df[z,7] = TRUE #false positive
+1585607520686:}else{
+1585607520702:heuristic_df[z,9] = TRUE #false negative
+1585607520716:}
+1585607520730:}
+1585607520744:}
+1585607530543:for (z in 1:numrow){
+1585607530558:i = z + 2
+1585607530573:yesterday = df[i-2,2]
+1585607530589:today = df[i-1,2]
+1585607530606:tomorrow = df[i,2]
+1585607530624:if (tomorrow == 0){
+1585607530639:rain_tomorrow = FALSE
+1585607530657:}else{
+1585607530687:rain_tomorrow = TRUE
+1585607530704:}
+1585607530720:heuristic_df[z,1] = yesterday
+1585607530737:heuristic_df[z,2] = today
+1585607530753:heuristic_df[z,3] = tomorrow
+1585607530770:heuristic_df[z,4] = FALSE # Label all guesses as false
+1585607530789:heuristic_df[z,5] = rain_tomorrow
+1585607530819:if ((today > 0) & (yesterday > 0)){
+1585607530835:heuristic_df[z,4] = TRUE
+1585607530853:}
+1585607530871:if (heuristic_df[z,4] == heuristic_df[z,5]){
+1585607530892:heuristic_df[z,6] = TRUE
+1585607530910:if (heuristic_df[z,4] == TRUE){
+1585607530928:heuristic_df[z,7] = TRUE #true positive
+1585607530946:}else{
+1585607530964:heuristic_df[z,9] = TRUE #True negative
+1585607530984:}
+1585607531001:}else{
+1585607531019:heuristic_df[z,6] = FALSE
+1585607531035:if (heuristic_df[z,4] == TRUE){
+1585607531051:heuristic_df[z,7] = TRUE #false positive
+1585607531067:}else{
+1585607531084:heuristic_df[z,9] = TRUE #false negative
+1585607531100:}
+1585607531115:}
+1585607531130:}
+1585607600523:View(heuristic_df)
+1585607748645:for (z in 1:numrow){
+1585607748663:i = z + 2
+1585607748691:yesterday = df[i-2,2]
+1585607748716:today = df[i-1,2]
+1585607748736:tomorrow = df[i,2]
+1585607748755:if (tomorrow == 0){
+1585607748775:rain_tomorrow = FALSE
+1585607748804:}else{
+1585607748823:rain_tomorrow = TRUE
+1585607748845:}
+1585607748866:heuristic_df[z,1] = yesterday
+1585607748885:heuristic_df[z,2] = today
+1585607748912:heuristic_df[z,3] = tomorrow
+1585607748930:heuristic_df[z,4] = FALSE # Label all guesses as false
+1585607748956:heuristic_df[z,5] = rain_tomorrow
+1585607748976:heuristic_df[z,7] = FALSE
+1585607748996:heuristic_df[z,8] = FALSE
+1585607749020:heuristic_df[z,9] = FALSE
+1585607749036:heuristic_df[z,10] = FALSE
+1585607749074:if ((today > 0) & (yesterday > 0)){
+1585607749102:heuristic_df[z,4] = TRUE
+1585607749126:}
+1585607749160:if (heuristic_df[z,4] == heuristic_df[z,5]){
+1585607749196:heuristic_df[z,6] = TRUE
+1585607749216:if (heuristic_df[z,4] == TRUE){
+1585607749238:heuristic_df[z,7] = TRUE #true positive
+1585607749267:}else{
+1585607749296:heuristic_df[z,9] = TRUE #True negative
+1585607749322:}
+1585607749346:}else{
+1585607749374:heuristic_df[z,6] = FALSE
+1585607749395:if (heuristic_df[z,4] == TRUE){
+1585607749414:heuristic_df[z,7] = TRUE #false positive
+1585607749442:}else{
+1585607749471:heuristic_df[z,9] = TRUE #false negative
+1585607749491:}
+1585607749518:}
+1585607749535:print(i)
+1585607749563:}
+1585607796500:i = 18416
+1585607808109:tomorrow = df[i,2]
+1585607829273:summary(df$PRCP)
+1585607907227:df[df$PRCP == NA]
+1585607917280:df[,df$PRCP == NA]
+1585607928531:df[PRCP == NA]
+1585607939290:df[df$PRCP == NA,]
+1585607954830:View(df)
+1585608044036:# Here is an example of how to build and populate
+1585608044053:# a heuristic model
+1585608044069:library(tidyverse)
+1585608052513:df[df$PRCP == NA]
+1585608062759:df[,df$PRCP == NA]
+1585608231803:df[is.na(PRCP == NA)]
+1585608240882:df[is.na(df$PRCP == NA)]
+1585608374869:df[is.na(df$PRCP)]
+1585608491754:df$PRCP = ifelse(is.na(df$PRCP),
+1585608491770:ave(df$PRCP, FUN = function(x) mean(x, na.rm = TRUE)),
+1585608491785:df$PRCP)
+1585608501262:summary(df$PRCP)
+1585608514145:heuristic_df <- data.frame("Yesterday" = 0,
+1585608514161:"Today" = 0,
+1585608514177:"Tomorrow" = 0,
+1585608514191:"Guess" = FALSE,
+1585608514205:"Rain Tomorrow" = FALSE,
+1585608514222:"Correct" = FALSE,
+1585608514237:"True Positive" = FALSE,
+1585608514252:"False Positive" = FALSE,
+1585608514269:"True Negative" = FALSE,
+1585608514287:"False Negative" = FALSE)
+1585608519338:for (z in 1:numrow){
+1585608519354:i = z + 2
+1585608519368:yesterday = df[i-2,2]
+1585608519386:today = df[i-1,2]
+1585608519405:tomorrow = df[i,2]
+1585608519422:if (tomorrow == 0){
+1585608519447:rain_tomorrow = FALSE
+1585608519463:}else{
+1585608519478:rain_tomorrow = TRUE
+1585608519498:}
+1585608519516:heuristic_df[z,1] = yesterday
+1585608519550:heuristic_df[z,2] = today
+1585608519570:heuristic_df[z,3] = tomorrow
+1585608519593:heuristic_df[z,4] = FALSE # Label all guesses as false
+1585608519614:heuristic_df[z,5] = rain_tomorrow
+1585608519632:heuristic_df[z,7] = FALSE
+1585608519650:heuristic_df[z,8] = FALSE
+1585608519666:heuristic_df[z,9] = FALSE
+1585608519682:heuristic_df[z,10] = FALSE
+1585608519713:if ((today > 0) & (yesterday > 0)){
+1585608519731:heuristic_df[z,4] = TRUE
+1585608519749:}
+1585608519769:if (heuristic_df[z,4] == heuristic_df[z,5]){
+1585608519790:heuristic_df[z,6] = TRUE
+1585608519808:if (heuristic_df[z,4] == TRUE){
+1585608519824:heuristic_df[z,7] = TRUE #true positive
+1585608519843:}else{
+1585608519861:heuristic_df[z,9] = TRUE #True negative
+1585608519875:}
+1585608519893:}else{
+1585608519912:heuristic_df[z,6] = FALSE
+1585608519928:if (heuristic_df[z,4] == TRUE){
+1585608519945:heuristic_df[z,7] = TRUE #false positive
+1585608519962:}else{
+1585608519981:heuristic_df[z,9] = TRUE #false negative
+1585608519999:}
+1585608520017:}
+1585608520035:print(i)
+1585608520054:}
+1585608645515:View(heuristic_df)
+1585617526363:regression_df <- data.frame("Intercept" = 1,
+1585617526390:"Today" = 0,
+1585617526415:"Tomorrow"  = 0)
+1585617527727:for (i in 1:numrow){
+1585617527746:tomorrow = df[i,2]
+1585617527766:today = df[i-1,2]
+1585617527786:regression_df[i,2] = today
+1585617527806:regression_df[i,3] = tomorrow
+1585617527838:}
+1585617596832:for (i in 1:numrow){
+1585617596848:if (i == 1){
+1585617596864:today = 0
+1585617596883:}else{
+1585617596902:today = df[i-1,2]
+1585617596918:}
+1585617596935:tomorrow = df[i,2]
+1585617596954:regression_df[i,2] = today
+1585617596974:regression_df[i,3] = tomorrow
+1585617597010:}
+1585617645423:View(regression_df)
+1585617645967:View(regression_df)
+1585617669964:for (i in 1:numrow){
+1585617669984:if (i == 1){
+1585617670001:today = 0
+1585617670022:}else{
+1585617670043:today = df[i-1,2]
+1585617670066:}
+1585617670085:tomorrow = df[i,2]
+1585617670105:regression_df[i.1] = 1
+1585617670125:regression_df[i,2] = today
+1585617670147:regression_df[i,3] = tomorrow
+1585617670180:}
+1585617680682:for (i in 1:numrow){
+1585617680703:if (i == 1){
+1585617680720:today = 0
+1585617680741:}else{
+1585617680760:today = df[i-1,2]
+1585617680780:}
+1585617680799:tomorrow = df[i,2]
+1585617680820:regression_df[i,1] = 1
+1585617680842:regression_df[i,2] = today
+1585617680860:regression_df[i,3] = tomorrow
+1585617680896:}
+1585617867549:ggplot(regression_df) +
+1585617867566:geom_point(mapping = aes(x = today, y = tomorrow))
+1585617878389:View(regression_df)
+1585617890280:ggplot(regression_df) +
+1585617890301:geom_point(mapping = aes(x = Today, y = Tomorrow))
+1585617901205:ggplot(regression_df) +
+1585617901234:geom_point(mapping = aes(x = Today, y = Tomorrow, color = "blue"))
+1585617913599:ggplot(regression_df) +
+1585617913621:geom_point(mapping = aes(x = Today, y = Tomorrow, color = blue))
+1585617955341:ggplot(regression_df) +
+1585617955360:geom_point(mapping = aes(x = Today, y = Tomorrow))
+1585618302676:?aperm
+1585859908335:source('~/.active-rstudio-document')
+1585859999046:X <- regression_df[0:200,1:3]
+1585860001478:View(X)
+1585860010968:X <- regression_df[0:200,1:2]
+1585860168989:param = matrix(c(1,1),nrow = 1)
+1585860172910:View(param)
+1585860185411:X%*%param
+1585860281087:as.matrix(X)%*%param
+1585860425312:y <- regression_df[0:200,3]
+1585860438806:y
+1585860506520:y <- as.data.frame(regression_df[0:200,3])
+1585860509222:View(y)
+1585860531877:y <- as.data.frame("tomorrow" = regression_df[0:200,3])
+1585860533968:View(y)
+1585860568840:param
+1585860635858:param = matrix(c(1,1),nrow = 2)
+1585860646353:as.matrix(X)%*%param
+1585860729404:y_hat = as.matrix(X)%*%param
+1585860743529:y_hat
+1585860753011:t(X)
+1585860760781:y_hat-y
+1585860767428:t(X)%*%(y_hat-y)
+1585860790726:t(as.matrix(X))
+1585860808733:View(X)
+1585860854338:t(as.matrix(X))%*%(y_hat-y)
+1585860875753:(as.matrix(y_hat-y))
+1585860881341:t(as.matrix(X))%*%(as.matrix(y_hat-y))
+1585860896122:alpha*(t(as.matrix(X))%*%(as.matrix(y_hat-y)))
+1585860986463:as.matrix(y_hat-y)
+1585861032188:t(as.matrix(X))
+1585861127988:t(as.matrix(X))%*%(as.matrix(y_hat-y))
+1585861203902:alpha*(as.matrix(t(as.matrix(X))%*%(as.matrix(y_hat-y))))
+1585861668024:j = t(as.matrix(X))%*%(as.matrix(y_hat-y))
+1585861671994:View(j)
+1585861705344:alpha*as.matrix(j)
+1585861717124:as.matrix(j)
+1585861767689:j[,:]
+1585861771363:k = matrix(j[,])
+1585861775738:j[,]
+1585861792709:alpha*k
+1585861811588:alpha*as.numeric(k)
+1585861817328:alpha
+1585861826415:alpha = 0.0001
+1585861834406:alpha*as.numeric(k)
+1585861851723:alpha*(t(as.matrix(X))%*%(as.matrix(y_hat-y)))
+1585861875924:param - alpha*(t(as.matrix(X))%*%(as.matrix(y_hat-y)))
+1585861899929:num_iters = 1000
+1585861916748:for (i in 1:num_iters){
+1585861916766:y_hat = as.matrix(X)%*%param
+1585861916787:param = param - alpha*(t(as.matrix(X))%*%(as.matrix(y_hat-y)))
+1585861916807:}
+1585861929732:View(param)
+1585920829441:df <- read_csv('~/data/seattle_weather_1948-2017.csv')
+1585920994579:#create an empty dataframe to hold 100 values
+1585920994599:heuristic_df<- data.frame(Yesterday=0,
+1585920994615:Today=0,
+1585920994636:Tomorrow=0,
+1585920994656:Guess=FALSE,
+1585920994685:Rain_tomorrow=FALSE,
+1585920994713:Correct=FALSE,
+1585920994732:row.names = seq(1,100,1))
+1585921148717:#create an empty dataframe to hold 100 values
+1585921148733:heuristic_df<-data.frame(matrix(, nrow=100, ncol=0))
+1585921169118:heuristic_df$Yesterday<-0
+1585921327677:View(df)
+1585921332082:View(heuristic_df)
+1585921339435:heuristic_df$Today<-0
+1585921340153:heuristic_df$Tomorrow<-0
+1585921340540:heuristic_df$Guess<-FALSE
+1585921341252:heheuristic_df$Rain_tomorrow<-FALSE
+1585921341569:heuristic_df$Correct<-FALSE
+1585921350541:heuristic_df$Rain_tomorrow<-FALSE
+1585921355328:#create an empty dataframe to hold 100 values
+1585921355354:heuristic_df<-data.frame(matrix(, nrow=100, ncol=0))
+1585921356118:heuristic_df$Yesterday<-0
+1585921356443:heuristic_df$Today<-0
+1585921356745:heuristic_df$Tomorrow<-0
+1585921357074:heuristic_df$Guess<-FALSE
+1585921357437:heuristic_df$Rain_tomorrow<-FALSE
+1585921357822:heuristic_df$Correct<-FALSE
+1585921359623:View(heuristic_df)
+1585921424040:# View first 10 rows of each dataframe
+1585921424069:View(df[c(1,10,1),])
+1585921434528:View(df)
+1585921450032:df[c(1,10,1),]
+1585921463772:# View first 10 rows of each dataframe
+1585921463801:View(df[seq(1,10,1),])
+1585921481787:View(heuristic_df[seq(1,10,1),])
+1585921968649:df <- read_csv('~/data/seattle_weather_1948-2017.csv')
+1585921969158:# Create an empty dataframe
+1585921969174:heuristic_df<-data.frame(matrix(, nrow=nrow(df), ncol=0))
+1585921971499:heuristic_df$Yesterday<-0
+1585921972624:heuristic_df$Today<-0
+1585921973037:heuristic_df$Tomorrow<-0
+1585921973481:heuristic_df$Guess<-FALSE
+1585921974457:heuristic_df$Rain_tomorrow<-FALSE
+1585921975483:heuristic_df$Correct<-FALSE
+1585921975696:# View first 10 rows of each dataframe
+1585921975718:View(df[seq(1,10,1),])
+1585921979556:View(heuristic_df[seq(1,10,1),])
+1585922327627:# Create an empty dataframe
+1585922327642:heuristic_df<-data.frame(matrix(, nrow=nrow(df)-2, ncol=0))
+1585922328593:heuristic_df$Yesterday<-0
+1585922328943:heuristic_df$Today<-0
+1585922329246:heuristic_df$Tomorrow<-0
+1585922329530:heuristic_df$Guess<-FALSE
+1585922329795:heuristic_df$Rain_tomorrow<-FALSE
+1585922330099:heuristic_df$Correct<-FALSE
+1585922331451:# View first 10 rows of each dataframe
+1585922331466:View(df[seq(1,10,1),])
+1585922347625:for(z in seq(1,nrow(df)-2,10)) {
+1585922347642:#start at time 2 in the data frame
+1585922347659:i <- z + 2
+1585922347688:#pull values from the dataframe
+1585922347704:yesterday <- df[(i-2),2]
+1585922347720:today <- df[(i-1),2]
+1585922347737:tomorrow <- df[i,2]
+1585922347752:rain_tomorrow <- df[(i+1),2]
+1585922347779:heuristic_df[z,1] <- yesterday
+1585922347794:heuristic_df[z,2] <- today
+1585922347810:heuristic_df[z,3] <- tomorrow
+1585922347825:heuristic_df[z,4] <- False # set guess default to False
+1585922347841:heuristic_df[z,5] <- rain_tomorrow
+1585922347886:######### uncomment and create your heuristic guess ################
+1585922347905:#if ##### your conditions here #########:
+1585922347921:#    heuristic_df.iat[z,3] = True
+1585922347938:####################################################################
+1585922347969:if(heuristic_df[z,3] == heuristic_df[z,4])  heuristic_df[z,5] <- True
+1585922347986:else heuristic_df[z,5] <- False
+1585922348002:}
+1585922373875:for(z in seq(1,nrow(df)-2,10)) {
+1585922373892:#start at time 2 in the data frame
+1585922373910:i <- z + 2
+1585922373942:#pull values from the dataframe
+1585922373960:yesterday <- df[(i-2),2]
+1585922373983:today <- df[(i-1),2]
+1585922374001:tomorrow <- df[i,2]
+1585922374022:rain_tomorrow <- df[(i+1),2]
+1585922374057:heuristic_df[z,1] <- yesterday
+1585922374075:heuristic_df[z,2] <- today
+1585922374093:heuristic_df[z,3] <- tomorrow
+1585922374112:heuristic_df[z,4] <- FALSE # set guess default to False
+1585922374131:heuristic_df[z,5] <- rain_tomorrow
+1585922374172:######### uncomment and create your heuristic guess ################
+1585922374191:#if ##### your conditions here #########:
+1585922374208:#    heuristic_df.iat[z,3] = True
+1585922374225:####################################################################
+1585922374254:if(heuristic_df[z,3] == heuristic_df[z,4])  heuristic_df[z,5] <- TRUE
+1585922374270:else heuristic_df[z,5] <- FALSE
+1585922374286:}
+1585922385967:View(heuristic_df)
+1585922452702:View(df)
+1585922578188:for(z in seq(1,nrow(df)-2,1)) {
+1585922578206:#start at time 2 in the data frame
+1585922578227:i <- z + 2
+1585922578257:#pull values from the dataframe
+1585922578274:yesterday <- df[(i-2),2]
+1585922578296:today <- df[(i-1),2]
+1585922578314:tomorrow <- df[i,2]
+1585922578335:rain_tomorrow <- df[(i+1),2]
+1585922578364:heuristic_df[z,1] <- yesterday
+1585922578381:heuristic_df[z,2] <- today
+1585922578398:heuristic_df[z,3] <- tomorrow
+1585922578415:heuristic_df[z,4] <- FALSE # set guess default to False
+1585922578431:heuristic_df[z,5] <- rain_tomorrow
+1585922578473:######### uncomment and create your heuristic guess ################
+1585922578494:#if ##### your conditions here #########:
+1585922578511:#    heuristic_df.iat[z,3] = True
+1585922578531:####################################################################
+1585922578567:if(heuristic_df[z,3] == heuristic_df[z,4])  heuristic_df[z,5] <- TRUE
+1585922578592:else heuristic_df[z,5] <- FALSE
+1585922578607:}
+1585922616602:View(heuristic_df)
+1585922714560:for(z in seq(1,nrow(df)-2,1)) {
+1585922714580:#start at time 2 in the data frame
+1585922714599:i <- z + 2
+1585922714636:#pull values from the dataframe
+1585922714656:yesterday <- df[(i-2),2]
+1585922714674:today <- df[(i-1),2]
+1585922714691:tomorrow <- df[i,2]
+1585922714706:rain_tomorrow <- df[(i+1),2]
+1585922714736:heuristic_df[z,1] <- yesterday
+1585922714753:heuristic_df[z,2] <- today
+1585922714769:heuristic_df[z,3] <- tomorrow
+1585922714786:heuristic_df[z,4] <- FALSE # set guess default to False
+1585922714813:heuristic_df[z,5] <- rain_tomorrow
+1585922714873:######### uncomment and create your heuristic guess ################
+1585922714891:#if ##### your conditions here #########:
+1585922714908:#    heuristic_df.iat[z,3] = True
+1585922714925:####################################################################
+1585922714953:if(heuristic_df[z,4] == heuristic_df[z,5])  heuristic_df[z,6] <- TRUE
+1585922714971:else heuristic_df[z,6] <- FALSE
+1585922714987:}
+1585922743161:View(heuristic_df)
+1585922861891:df <- read_csv('~/data/seattle_weather_1948-2017.csv')
+1585922862208:# Create an empty dataframe
+1585922862233:heuristic_df<-data.frame(matrix(, nrow=nrow(df)-2, ncol=0))
+1585922862590:heuristic_df$Yesterday<-0
+1585922863053:heuristic_df$Today<-0
+1585922863470:heuristic_df$Tomorrow<-0
+1585922863868:heuristic_df$Guess<-FALSE
+1585922864227:heuristic_df$Rain_tomorrow<-FALSE
+1585922864607:heuristic_df$Correct<-FALSE
+1585922865020:# View first 10 rows of each dataframe
+1585922865037:View(df[seq(1,10,1),])
+1585922871322:for(z in seq(1,nrow(df)-2,1)) {
+1585922871346:#start at time 2 in the data frame
+1585922871363:i <- z + 2
+1585922871392:#pull values from the dataframe
+1585922871411:yesterday <- df[(i-2),2]
+1585922871429:today <- df[(i-1),2]
+1585922871459:tomorrow <- df[i,2]
+1585922871479:rain_tomorrow <- df[(i+1),2]
+1585922871508:heuristic_df[z,1] <- yesterday
+1585922871525:heuristic_df[z,2] <- today
+1585922871544:heuristic_df[z,3] <- tomorrow
+1585922871560:heuristic_df[z,4] <- FALSE # set guess default to False
+1585922871578:heuristic_df[z,5] <- rain_tomorrow
+1585922871622:######### uncomment and create your heuristic guess ################
+1585922871639:#if ##### your conditions here #########:
+1585922871656:#    heuristic_df.iat[z,3] = True
+1585922871675:####################################################################
+1585922871709:if(heuristic_df[z,4] == heuristic_df[z,5])  heuristic_df[z,6] <- TRUE
+1585922871729:else heuristic_df[z,6] <- FALSE
+1585922871746:}
+1585923069249:View(df)
+1585923112647:df <- read_csv('~/data/seattle_weather_1948-2017.csv')
+1585923112935:df[is.na(df)]<-0
+1585923114686:# Create an empty dataframe
+1585923114705:heuristic_df<-data.frame(matrix(, nrow=nrow(df)-2, ncol=0))
+1585923114971:heuristic_df$Yesterday<-0
+1585923115211:heuristic_df$Today<-0
+1585923115489:heuristic_df$Tomorrow<-0
+1585923115757:heuristic_df$Guess<-FALSE
+1585923116033:heuristic_df$Rain_tomorrow<-FALSE
+1585923116361:heuristic_df$Correct<-FALSE
+1585923116824:# View first 10 rows of each dataframe
+1585923116840:View(df[seq(1,10,1),])
+1585923121868:for(z in seq(1,nrow(df)-2,1)) {
+1585923121890:#start at time 2 in the data frame
+1585923121913:i <- z + 2
+1585923121950:#pull values from the dataframe
+1585923121974:yesterday <- df[(i-2),2]
+1585923121995:today <- df[(i-1),2]
+1585923122017:tomorrow <- df[i,2]
+1585923122037:rain_tomorrow <- df[(i+1),2]
+1585923122069:heuristic_df[z,1] <- yesterday
+1585923122089:heuristic_df[z,2] <- today
+1585923122110:heuristic_df[z,3] <- tomorrow
+1585923122131:heuristic_df[z,4] <- FALSE # set guess default to False
+1585923122181:heuristic_df[z,5] <- rain_tomorrow
+1585923122239:######### uncomment and create your heuristic guess ################
+1585923122259:#if ##### your conditions here #########:
+1585923122279:#    heuristic_df.iat[z,3] = True
+1585923122298:####################################################################
+1585923122332:if(heuristic_df[z,4] == heuristic_df[z,5])  heuristic_df[z,6] <- TRUE
+1585923122353:else heuristic_df[z,6] <- FALSE
+1585923122374:}
+1585923282141:df <- read_csv('~/data/seattle_weather_1948-2017.csv')
+1585923282443:df[is.na(df)]<-0
+1585923283030:# Create an empty dataframe
+1585923283049:heuristic_df<-data.frame(matrix(, nrow=nrow(df)-2, ncol=0))
+1585923283375:heuristic_df$Yesterday<-0
+1585923283549:heuristic_df$Today<-0
+1585923283849:heuristic_df$Tomorrow<-0
+1585923284161:heuristic_df$Guess<-FALSE
+1585923284611:heuristic_df$Rain_tomorrow<-FALSE
+1585923284683:heuristic_df$Correct<-FALSE
+1585923285347:# View first 10 rows of each dataframe
+1585923285365:View(df[seq(1,10,1),])
+1585923290662:for(z in seq(1,nrow(df)-2,1)) {
+1585923290691:#start at time 2 in the data frame
+1585923290716:print(z)
+1585923290736:i <- z + 2
+1585923290775:#pull values from the dataframe
+1585923290795:yesterday <- df[(i-2),2]
+1585923290820:today <- df[(i-1),2]
+1585923290840:tomorrow <- df[i,2]
+1585923290860:rain_tomorrow <- df[(i+1),2]
+1585923290899:heuristic_df[z,1] <- yesterday
+1585923290920:heuristic_df[z,2] <- today
+1585923290940:heuristic_df[z,3] <- tomorrow
+1585923290958:heuristic_df[z,4] <- FALSE # set guess default to False
+1585923290975:heuristic_df[z,5] <- rain_tomorrow
+1585923291040:######### uncomment and create your heuristic guess ################
+1585923291060:#if ##### your conditions here #########:
+1585923291079:#    heuristic_df.iat[z,3] = True
+1585923291096:####################################################################
+1585923291133:if(heuristic_df[z,4] == heuristic_df[z,5])  heuristic_df[z,6] <- TRUE
+1585923291154:else heuristic_df[z,6] <- FALSE
+1585923291172:}
+1585923464150:for(z in seq(1,nrow(df)-2,1)) {
+1585923464170:#start at time 2 in the data frame
+1585923464195:print(z)
+1585923464220:i <- z + 2
+1585923464261:#pull values from the dataframe
+1585923464282:yesterday <- df[(i-2),2]
+1585923464306:today <- df[(i-1),2]
+1585923464325:tomorrow <- df[i,2]
+1585923464345:rain_tomorrow <- tomorrow>0
+1585923464380:heuristic_df[z,1] <- yesterday
+1585923464401:heuristic_df[z,2] <- today
+1585923464425:heuristic_df[z,3] <- tomorrow
+1585923464452:heuristic_df[z,4] <- FALSE # set guess default to False
+1585923464477:heuristic_df[z,5] <- rain_tomorrow
+1585923464534:######### uncomment and create your heuristic guess ################
+1585923464558:#if ##### your conditions here #########:
+1585923464577:#    heuristic_df.iat[z,3] = True
+1585923464594:####################################################################
+1585923464631:if(heuristic_df[z,4] == heuristic_df[z,5])  heuristic_df[z,6] <- TRUE
+1585923464650:else heuristic_df[z,6] <- FALSE
+1585923464667:}
+1585923474203:for(z in seq(1,nrow(df)-2,1)) {
+1585923474224:#start at time 2 in the data frame
+1585923474240:i <- z + 2
+1585923474281:#pull values from the dataframe
+1585923474306:yesterday <- df[(i-2),2]
+1585923474328:today <- df[(i-1),2]
+1585923474349:tomorrow <- df[i,2]
+1585923474370:rain_tomorrow <- tomorrow>0
+1585923474410:heuristic_df[z,1] <- yesterday
+1585923474429:heuristic_df[z,2] <- today
+1585923474448:heuristic_df[z,3] <- tomorrow
+1585923474470:heuristic_df[z,4] <- FALSE # set guess default to False
+1585923474491:heuristic_df[z,5] <- rain_tomorrow
+1585923474557:######### uncomment and create your heuristic guess ################
+1585923474577:#if ##### your conditions here #########:
+1585923474595:#    heuristic_df.iat[z,3] = True
+1585923474614:####################################################################
+1585923474650:if(heuristic_df[z,4] == heuristic_df[z,5])  heuristic_df[z,6] <- TRUE
+1585923474667:else heuristic_df[z,6] <- FALSE
+1585923474684:}
+1585923587508:sum(heuristic_df$Correct)/nrow(heuristic_df)
+1585923665944:df <- read_csv('~/data/seattle_weather_1948-2017.csv')
+1585923667953:df[is.na(df)]<-0
+1585923669167:# Create an empty dataframe
+1585923669184:heuristic_df<-data.frame(matrix(, nrow=nrow(df)-2, ncol=0))
+1585923669954:heuristic_df$Yesterday<-0
+1585923670520:heuristic_df$Today<-0
+1585923670999:heuristic_df$Tomorrow<-0
+1585923671436:heuristic_df$Guess<-FALSE
+1585923671925:heuristic_df$Rain_tomorrow<-FALSE
+1585923672331:heuristic_df$Correct<-FALSE
+1585923675271:# View first 10 rows of each dataframe
+1585923675295:View(df[seq(1,10,1),])
+1585923682815:View(heuristic_df[seq(1,10,1),])
+1585923690789:for(z in seq(1,nrow(df)-2,1)) {
+1585923690805:#start at time 2 in the data frame
+1585923690820:i <- z + 2
+1585923690866:#pull values from the dataframe
+1585923690885:yesterday <- df[(i-2),2]
+1585923690907:today <- df[(i-1),2]
+1585923690928:tomorrow <- df[i,2]
+1585923690950:rain_tomorrow <- tomorrow>0
+1585923690982:heuristic_df[z,1] <- yesterday
+1585923691001:heuristic_df[z,2] <- today
+1585923691022:heuristic_df[z,3] <- tomorrow
+1585923691050:heuristic_df[z,4] <- FALSE # set guess default to False
+1585923691071:heuristic_df[z,5] <- rain_tomorrow
+1585923691118:######### uncomment and create your heuristic guess ################
+1585923691136:#if( ##### your conditions here #########){
+1585923691157:#    heuristic_df[z,4] <- TRUE
+1585923691175:# }
+1585923691193:####################################################################
+1585923691222:if(heuristic_df[z,4] == heuristic_df[z,5])  heuristic_df[z,6] <- TRUE
+1585923691240:else heuristic_df[z,6] <- FALSE
+1585923691258:}
+1585923718390:sum(heuristic_df$Correct)/nrow(heuristic_df)
+1585932363198:#import the pakcages that we will need
+1585932363234:df = read_csv('~/data/seattle_weather_1948-2017.csv')
+1585932369118:numrows <- 25549 # can be as large as 25549
+1585932559420:#import the pakcages that we will need
+1585932559443:df = read_csv('~/data/seattle_weather_1948-2017.csv')
+1585932565644:numrows <- 25549 # can be as large as 25549
+1585932567180:#create an empty dataframe to hold values
+1585932567211:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1585932568435:regression_df$Yesterday<-0
+1585932569162:regression_df$Today<-0
+1585932570020:# Populate regression DF
+1585932570045:for( i in seq(1,numrows,1)){
+1585932570077:tomorrow <- df[i,1]
+1585932570110:today =<-df[(i-1),1]
+1585932570138:regression_df[i,2] = tomorrow
+1585932570166:regression_df[i,1] = today}
+1585932590885:# Populate regression DF
+1585932590917:for(i in seq(1,numrows,1)){
+1585932590947:tomorrow <- df[i,1]
+1585932590975:today <-df[(i-1),1]
+1585932591003:regression_df[i,2] <- tomorrow
+1585932591032:regression_df[i,1] <- today}
+1585932619086:View(df)
+1585932727335:# Populate regression DF
+1585932727358:for(i in seq(1,numrows,1)){
+1585932727384:tomorrow <- df[(i+1),2]
+1585932727417:today <-df[(i),2]
+1585932727444:regression_df[i,2] <- tomorrow
+1585932727469:regression_df[i,1] <- today
+1585932727498:}
+1585932739165:View(regression_df)
+1585932769997:#create an empty dataframe to hold values
+1585932770031:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1585932770375:regression_df$Today<-0
+1585932771065:regression_df$Tomorrow<-0
+1585932771673:# Populate regression DF
+1585932771707:for(i in seq(1,numrows,1)){
+1585932771742:tomorrow <- df[(i+1),2]
+1585932771775:today <-df[(i),2]
+1585932771799:regression_df[i,2] <- tomorrow
+1585932771825:regression_df[i,1] <- today
+1585932771862:}
+1585932803092:regression_df <- regression_df[!is.na(regression_df),] #exclude any rows with missing data
+1585932866410:numrows <- 25549 # can be as large as 25549
+1585932866710:#create an empty dataframe to hold values
+1585932866772:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1585932866998:regression_df$Today<-0
+1585932867336:regression_df$Tomorrow<-0
+1585932867687:# Populate regression DF
+1585932867727:for(i in seq(1,numrows,1)){
+1585932867794:tomorrow <- df[(i+1),2]
+1585932867822:today <-df[(i),2]
+1585932867888:regression_df[i,2] <- tomorrow
+1585932867940:regression_df[i,1] <- today
+1585932868006:}
+1585932877487:regression_df <- regression_df[complete.cases(regression_df),] #exclude any rows with missing data
+1585933003822:#this makes a simple dataframe with a relationship that we can now plot
+1585933003845:ggplot(regression_df) +
+1585933003870:geom_point(mapping = aes(x = Today, y = Tomorrow))
+1585933080031:# Creating a basic linear model to best predict these values.
+1585933080059:# Start with a slope and intercept values of 1 and then iterate through gradient descent.
+1585933080079:gradientDescent <- function(X, y, param, alpha, num_iters){
+1585933080105:for (i in 1:num_iters){
+1585933080129:y_hat = as.matrix(X)%*%param
+1585933080153:param = param - alpha*(t(as.matrix(X))%*%(as.matrix(y_hat-y)))
+1585933080180:}
+1585933080208:return(param)
+1585933080272:}
+1585933140290:# In this fucntion param is the initial guess of the values of the linear function and X is the vector of data values and y is the realization
+1585933140324:X <- regression_df[0:200,1:2]
+1585933142052:y <- as.data.frame(regression_df[0:200,3])
+1585933145202:param = matrix(c(1,1),nrow = 2)
+1585933147779:alpha = 0.0001
+1585933150810:num_iters = 1000
+1585933156011:solution <- gradientDescent(X, y, param, alpha, num_iters)
+1585933178214:# In this fucntion param is the initial guess of the values of the linear function and X is the vector of data values and y is the realization
+1585933178247:X <- regression_df[0:200,1:2]
+1585933178824:y <- as.data.frame(regression_df[0:200,3])
+1585933179240:param <- matrix(c(1,1),nrow = 2)
+1585933179275:alpha <- 0.0001
+1585933179356:num_iters <- 1000
+1585933180700:solution <- gradientDescent(X, y, param, alpha, num_iters)
+1585933249985:options(error = traceback)
+1585933252430:solution <- gradientDescent(X, y, param, alpha, num_iters)
+1585933258130:solution <- gradientDescent(X, y, param, alpha, num_iters)
+1585933260239:solution <- gradientDescent(X, y, param, alpha, num_iters)
+1585933319878:# In this fucntion param is the initial guess of the values of the linear function,
+1585933319925:# X is the vector of data values and y is the realization
+1585933319955:X <- regression_df[0:200,1:2]
+1585933321056:y <- as.data.frame(regression_df[0:200,3])
+1585933321200:param <- matrix(c(1,1),nrow = 2)
+1585933321661:alpha <- 0.0001
+1585933321733:num_iters <- 1000
+1585933329248:i<-1
+1585933332407:y_hat = as.matrix(X)%*%param
+1585933350241:View(X)
+1585933548048:View(df)
+1585933668511:View(df)
+1585933740564:numrows <- 25549 # can be as large as 25549
+1585933741077:#create an empty dataframe to hold values
+1585933741092:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1585933741517:rergession_df$Intercept<-1
+1585933741981:regression_df$Today<-0
+1585933742513:regression_df$Tomorrow<-0
+1585933747190:numrows <- 25549 # can be as large as 25549
+1585933747815:#create an empty dataframe to hold values
+1585933747831:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1585933748313:rergession_df$Intercept<-1
+1585933759083:numrows <- 25549 # can be as large as 25549
+1585933759498:#create an empty dataframe to hold values
+1585933759513:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1585933760043:regression_df$Intercept<-1
+1585933760617:regression_df$Today<-0
+1585933761279:regression_df$Tomorrow<-0
+1585933762494:# Populate regression DF
+1585933762511:for(i in seq(1,numrows,1)){
+1585933762528:tomorrow <- df[(i+1),2]
+1585933762546:today <-df[(i),2]
+1585933762561:regression_df[i,3] <- tomorrow
+1585933762577:regression_df[i,2] <- today
+1585933762592:}
+1585933772902:View(regression_df)
+1585933782586:regression_df <- regression_df[complete.cases(regression_df),] #exclude any rows with missing data
+1585933785493:#this makes a simple dataframe with a relationship that we can now plot
+1585933785509:ggplot(regression_df) +
+1585933785527:geom_point(mapping = aes(x = Today, y = Tomorrow))
+1585933789630:# Creating a basic linear model to best predict these values.
+1585933789646:# Start with a slope and intercept values of 1 and then iterate through gradient descent.
+1585933789662:gradientDescent <- function(X, y, param, alpha, num_iters){
+1585933789680:for (i in 1:num_iters){
+1585933789696:y_hat = as.matrix(X)%*%param
+1585933789714:param = param - alpha*(t(as.matrix(X))%*%(as.matrix(y_hat-y)))
+1585933789732:}
+1585933789748:return(param)
+1585933789768:}
+1585933791423:# In this fucntion param is the initial guess of the values of the linear function,
+1585933791445:# X is the vector of data values and y is the realization
+1585933791467:X <- regression_df[0:200,1:2]
+1585933794016:y <- as.data.frame(regression_df[0:200,3])
+1585933798406:param <- matrix(c(1,1),nrow = 2)
+1585933800588:alpha <- 0.0001
+1585933801672:num_iters <- 1000
+1585933803562:solution <- gradientDescent(X, y, param, alpha, num_iters)
+1585933810440:solution
+1585934004047:grid = sns.JointGrid(x=regression_df.today,y=regression_df.tomorrow)
+1585934512212:??abline
+1585934586251:ggplot(regression_df) +
+1585934586272:geom_point(mapping = aes(x = Today, y = Tomorrow))+
+1585934586300:abline(yintercept=solution[1], slope=solution[2])
+1585934607548:#import the pakcages that we will need
+1585934607574:library(ggplot2)
+1585934612213:ggplot(regression_df) +
+1585934612233:geom_point(mapping = aes(x = Today, y = Tomorrow))+
+1585934612250:abline(yintercept=solution[1], slope=solution[2])
+1585934616444:df = read_csv('~/data/seattle_weather_1948-2017.csv')
+1585934632586:#import the pakcages that we will need
+1585934632614:library(ggplot2)
+1585934633373:df <- read.csv('~/data/seattle_weather_1948-2017.csv')
+1585934637480:View(df)
+1585934640286:numrows <- 25549 # can be as large as 25549
+1585934641372:#create an empty dataframe to hold values
+1585934641400:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1585934642119:regression_df$Intercept<-1
+1585934642813:regression_df$Today<-0
+1585934643340:regression_df$Tomorrow<-0
+1585934644139:# Populate regression DF
+1585934644157:for(i in seq(1,numrows,1)){
+1585934644177:tomorrow <- df[(i+1),2]
+1585934644195:today <-df[(i),2]
+1585934644219:regression_df[i,3] <- tomorrow
+1585934644237:regression_df[i,2] <- today
+1585934644255:}
+1585934653144:regression_df <- regression_df[complete.cases(regression_df),] #exclude any rows with missing data
+1585934653898:#this makes a simple dataframe with a relationship that we can now plot
+1585934653915:ggplot(regression_df) +
+1585934653935:geom_point(mapping = aes(x = Today, y = Tomorrow))
+1585934656847:# Creating a basic linear model to best predict these values.
+1585934656878:# Start with a slope and intercept values of 1 and then iterate through gradient descent.
+1585934656907:gradientDescent <- function(X, y, param, alpha, num_iters){
+1585934656941:for (i in 1:num_iters){
+1585934656975:y_hat = as.matrix(X)%*%param
+1585934656993:param = param - alpha*(t(as.matrix(X))%*%(as.matrix(y_hat-y)))
+1585934657026:}
+1585934657045:return(param)
+1585934657074:}
+1585934659851:# In this fucntion param is the initial guess of the values of the linear function,
+1585934659895:# X is the vector of data values and y is the realization
+1585934659919:X <- regression_df[0:200,1:2]
+1585934660452:y <- as.data.frame(regression_df[0:200,3])
+1585934660857:param <- matrix(c(1,1),nrow = 2)
+1585934661238:alpha <- 0.0001
+1585934661827:num_iters <- 1000
+1585934663223:solution <- gradientDescent(X, y, param, alpha, num_iters)
+1585934665193:solution
+1585934669299:ggplot(regression_df) +
+1585934669322:geom_point(mapping = aes(x = Today, y = Tomorrow))+
+1585934669345:abline(yintercept=solution[1], slope=solution[2])
+1585934688533:ggplot(regression_df) +
+1585934688555:geom_point(mapping = aes(x = Today, y = Tomorrow))+
+1585934688579:geom_abline(yintercept=solution[1], slope=solution[2])
+1585934714237:??geom_abline
+1585934723942:ggplot(regression_df) +
+1585934723962:geom_point(mapping = aes(x = Today, y = Tomorrow))+
+1585934723984:geom_abline(intercept=solution[1], slope=solution[2])
+1585934769092:library(glmnet)
+1585934804236:??glm
+1585934869685:mymodel <- glmnet(regression_df$Today, regression_df$Tomorrow)
+1585934881318:View(regression_df)
+1585934886956:mymodel <- glmnet(regression_df$Today, regression_df$Tomorrow)
+1585934964590:mymodel <- glmnet(regression_df[,1:2], regression_df$Tomorrow)
+1585934983168:mymodel <- glmnet(unlist(regression_df[,1:2]), regression_df$Tomorrow)
+1585934998418:mymodel <- glmnet(matrix(regression_df[,1:2]), regression_df$Tomorrow)
+1585935007232:mymodel <- glmnet(regression_df[,1:2], regression_df$Tomorrow)
+1585935020341:mymodel <- glmnet(regression_df[,c(1,2)], regression_df$Tomorrow)
+1585935113404:mymodel <- glmnet(regression_df, regression_df$Tomorrow)
+1585935264497:mymodel <- lm(regression_df$Today ~ regression_df$Tomorrow, data = regression_df)
+1585935268256:View(mymodel)
+1585935350466:print(mymodel)
+1585935437226:predict.lm(regression_df)
+1585935442037:predict.lm(regression_df$Today)
+1585935450390:predict.lm(regression_df$Intercept)
+1585935461107:??predict.lm
+1585935487767:??predict.lm(mymodel)
+1585935516149:predict.lm(mymodel)
+1585935628832:regression_df$Predictions<-predict.lm(mymodel)
+1585935661620:mymodel$coefficients
+1585935667330:mymodel$coefficients[1]
+1585935686737:ggplot(regression_df) +
+1585935686772:geom_point(mapping = aes(x = Today, y = Tomorrow), color="black")+
+1585935686799:geom_point(mapping = aes(x = Today, y = Predictions), color="blue")+
+1585935686826:geom_abline(intercept=solution[1], slope=mymodel$coefficients[2], color = "blue")
+1585935743561:View(mymodel)
+1585935821578:summary(mymodel)
+1585935852070:summary(mymodel)$r.squred
+1585935854735:summary(mymodel)$r.squared
+1585935987448:ggplot(regression_df) +
+1585935987467:geom_point(mapping = aes(x = Predictions, y = Tomorrow), color="black")
+1585936043671:ggplot(regression_df) +
+1585936043688:geom_point(mapping = aes(x = Predictions, y = Tomorrow), color="black")+
+1585936043710:scale_x_continuous(limits = c(0,5))
+1585936072695:ggplot(regression_df) +
+1585936072712:geom_point(mapping = aes(y = Predictions, x = Tomorrow), color="black")+
+1585936072731:scale_x_continuous(limits = c(0,5))
+1585936097526:ggplot(regression_df) +
+1585936097547:geom_point(mapping = aes(y = Predictions, x = Tomorrow), color="black")+
+1585936097573:scale_y_continuous(limits = c(0,5))+
+1585936097610:scale_x_continuous(limits = c(0,5))
+1585936459173:View(regression_df[seq(1,20,1)])
+1585936464889:View(regression_df[seq(1,20,1),])
+1585936712646:library(parsnip)
+1586011044261:library(glmnet)
+1586011049510:df <- read.csv('~/data/seattle_weather_1948-2017.csv')
+1586011051293:numrows <- 25549 # can be as large as 25549
+1586011051963:#create an empty dataframe to hold values
+1586011051991:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1586011052768:regression_df$Today<-0
+1586011053210:regression_df$Tomorrow<-0
+1586011054243:# Populate regression DF
+1586011054266:for(i in seq(1,numrows,1)){
+1586011054287:tomorrow <- df[(i+1),2]
+1586011054315:today <-df[(i),2]
+1586011054335:regression_df[i,3] <- tomorrow
+1586011054359:regression_df[i,2] <- today
+1586011054378:}
+1586011062062:regression_df <- regression_df[complete.cases(regression_df),] #exclude any rows with missing data
+1586011207269:View(regression_df)
+1586011224874:df <- read.csv('~/data/seattle_weather_1948-2017.csv')
+1586011225741:numrows <- 25549 # can be as large as 25549
+1586011226389:#create an empty dataframe to hold values
+1586011226410:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1586011227093:regression_df$Today<-0
+1586011227976:regression_df$Tomorrow<-0
+1586011259324:# Populate regression DF
+1586011259341:for(i in seq(1,numrows,1)){
+1586011259357:tomorrow <- df[(i+1),1]
+1586011259371:today <-df[(i),2]
+1586011259385:regression_df[i,2] <- tomorrow
+1586011259398:regression_df[i,1] <- today
+1586011259411:}
+1586011267029:regression_df <- regression_df[complete.cases(regression_df),] #exclude any rows with missing data
+1586011273116:View(regression_df)
+1586011288683:View(df)
+1586011319701:df <- read.csv('~/data/seattle_weather_1948-2017.csv')
+1586011320459:numrows <- 25549 # can be as large as 25549
+1586011321369:#create an empty dataframe to hold values
+1586011321386:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1586011322150:regression_df$Today<-0
+1586011322960:regression_df$Tomorrow<-0
+1586011323759:# Populate regression DF
+1586011323773:for(i in seq(1,numrows,1)){
+1586011323788:tomorrow <- df[(i+1),2]
+1586011323802:today <-df[(i),2]
+1586011323818:regression_df[i,2] <- tomorrow
+1586011323836:regression_df[i,1] <- today
+1586011323852:}
+1586011333181:regression_df <- regression_df[complete.cases(regression_df),] #exclude any rows with missing data
+1586011336594:View(regression_df)
+1586011441991:# Train Logistic Model
+1586011442014:# Create binary variable for rain tomorrow
+1586011442033:regression_df$Tomorrow_bin<-regression_df$Tomorrow>0
+1586011444163:View(regression_df)
+1586011477964:clf <- glm(Tomorrow_bin ~ Today, data = regression_df, family = "binomial")
+1586011498502:View(clf)
+1586011525693:View(regression_df)
+1586011796954:clf$fitted.values
+1586011855617:#we can calculate the accuarcy using the score method
+1586011855633:clf$fitted.values<-clf$fitted.values>=0.5
+1586011861875:clf$fitted.values
+1586011891509:score = sum(regression_df$Tomorrow_bin==clf$fitted.values)
+1586011898219:score
+1586011917602:score = sum(regression_df$Tomorrow_bin==clf$fitted.values) / length(regression_df$Tomorrow_bin)
+1586011924788:print(score)
+1586011966930:#we can also make a simple confusion matrix
+1586011966948:table(clf$fitted.values, regression_df$Tomorrow_bin)
+1586012045496:#we can also make a simple confusion matrix
+1586012045523:matrix<-table(clf$fitted.values, regression_df$Tomorrow_bin)
+1586012060444:#we can also make a simple confusion matrix
+1586012060460:matrix<-matrix(table(clf$fitted.values, regression_df$Tomorrow_bin))
+1586012204577:#we can also make a simple confusion matrix
+1586012204596:confusion_matrix<-table(clf$fitted.values, regression_df$Tomorrow_bin)
+1586012205429:names(attributes(confusion_matrix)$dimnames)<-c("Predicted", "Actual")
+1586012206342:confusion_matrix
+1586012824229:image(confusion_matrix)
+1586012916912:??image
+1586013388140:#Here is a bit nicer matrix
+1586013388161:image(confusion_matrix, xlab="Actual", ylab="Predicted")
+1586013410576:#Here is a bit nicer matrix
+1586013410593:image(confusion_matrix, xlab="Predicted", ylab="Actual")
+1586013496934:#Here is a bit nicer matrix
+1586013496952:image(confusion_matrix, xlab="Predicted", ylab="Actual", xaxt=c(0,1))
+1586013596375:#Here is a bit nicer matrix
+1586013596393:image(confusion_matrix, xlab="Predicted", ylab="Actual")
+1586013597963:axis(side = 1, at=c(0,1), labels=c(0,1))
+1586013637081:#Here is a bit nicer matrix
+1586013637099:image(confusion_matrix, xlab="Predicted", ylab="Actual", xaxt="n", yaxt="n")
+1586013638823:axis(side = 1, at=c(0,1), labels=c(0,1))
+1586013670218:#Here is a bit nicer matrix
+1586013670234:image(confusion_matrix, xlab="Predicted", ylab="Actual", xaxt="n", yaxt="n")
+1586013670905:axis(side = 1, at=c(0,1), labels=c("FALSE","TRUE"))
+1586013671974:axis(side = 2, at=c(0,1), labels=c("FALSE","TRUE"))
+1586013763970:# Logistic Regression
+1586013763988:# Using the same seattle weather data as last chapter develop a logistic regression model
+1586013764006:#import the pakcages that we will need
+1586013764028:library(ggplot2)
+1586013765310:library(glmnet)
+1586013773137:df <- read.csv('~/data/seattle_weather_1948-2017.csv')
+1586013774347:numrows <- 25549 # can be as large as 25549
+1586013775088:#create an empty dataframe to hold values
+1586013775103:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1586013775686:regression_df$Today<-0
+1586013776150:regression_df$Tomorrow<-0
+1586013776821:# Populate regression DF
+1586013776836:for(i in seq(1,numrows,1)){
+1586013776852:tomorrow <- df[(i+1),2]
+1586013776868:today <-df[(i),2]
+1586013776884:regression_df[i,2] <- tomorrow
+1586013776898:regression_df[i,1] <- today
+1586013776915:}
+1586013783394:regression_df <- regression_df[complete.cases(regression_df),] #exclude any rows with missing data
+1586013787467:View(regression_df[seq(1,20,1),])
+1586013796816:# Train Logistic Model
+1586013796837:# Create binary variable for rain tomorrow
+1586013796853:regression_df$Tomorrow_bin<-regression_df$Tomorrow>0
+1586013798815:clf <- glm(Tomorrow_bin ~ Today, data = regression_df, family = "binomial")
+1586013799481:#we can calculate the accuarcy using the score method
+1586013799496:clf$fitted.values<-clf$fitted.values>=0.5
+1586013800422:score = sum(regression_df$Tomorrow_bin==clf$fitted.values) / length(regression_df$Tomorrow_bin)
+1586013801559:print(score)
+1586013803206:#we can also make a simple confusion matrix
+1586013803223:confusion_matrix<-table(clf$fitted.values, regression_df$Tomorrow_bin)
+1586013804098:names(attributes(confusion_matrix)$dimnames)<-c("Predicted", "Actual")
+1586013804958:confusion_matrix
+1586013807335:#Here is a bit nicer matrix
+1586013807352:image(confusion_matrix, xlab="Predicted", ylab="Actual", xaxt="n", yaxt="n")
+1586013807952:axis(side = 1, at=c(0,1), labels=c("FALSE","TRUE"))
+1586013808652:axis(side = 2, at=c(0,1), labels=c("FALSE","TRUE"))
+1586098224892:library(parsnip)
+1586098255134:# Train decision tree using parsnip, a great library for training models!
+1586098255149:clf<-decision_tree()
+1586098273114:??parsnip::fit
+1586098356284:clf<-fit(clf, Tomorrow ~ Today, data = regression_df)
+1586098368109:# Train decision tree using parsnip, a great library for training models!
+1586098368127:clf<-decision_tree(mode="unknown")
+1586098369222:clf<-fit(clf, Tomorrow ~ Today, data = regression_df)
+1586098378362:# Train decision tree using parsnip, a great library for training models!
+1586098378380:clf<-decision_tree(mode="unknown")
+1586098380382:clf<-fit(clf, Tomorrow ~ Today, data = regression_df)
+1586098413502:# Train decision tree using parsnip, a great library for training models!
+1586098413517:clf<-decision_tree(mode="regression")
+1586098414679:clf<-fit(clf, Tomorrow ~ Today, data = regression_df)
+1586098430079:library(parsnip)
+1586098430697:df <- read.csv('~/data/seattle_weather_1948-2017.csv')
+1586098431413:numrows <- 25549 # can be as large as 25549
+1586098432054:#create an empty dataframe to hold values
+1586098432069:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1586098432649:regression_df$Today<-0
+1586098433236:regression_df$Tomorrow<-0
+1586098433793:# Populate regression DF
+1586098433809:for(i in seq(1,numrows,1)){
+1586098433828:tomorrow <- df[(i+1),2]
+1586098433845:today <-df[(i),2]
+1586098433861:regression_df[i,2] <- tomorrow
+1586098433878:regression_df[i,1] <- today
+1586098433895:}
+1586098440558:regression_df <- regression_df[complete.cases(regression_df),] #exclude any rows with missing data
+1586098440575:# Train decision tree using parsnip, a great library for training models!
+1586098440590:clf<-decision_tree(mode="regression")
+1586098442494:clf<-fit(clf, Tomorrow ~ Today, data = regression_df)
+1586098451260:View(clf)
+1586098516998:clf$fit$y
+1586098527914:clf$fit$y<-clf$fit$y>0
+1586098564140:# Train decision tree using parsnip, a great library for training models!
+1586098564159:clf<-decision_tree(mode="regression")
+1586098564962:clf<-fit(clf, Tomorrow ~ Today, data = regression_df)
+1586098567845:clf = tree.DecisionTreeClassifier(criterion='entropy').fit(x, y)
+1586098574101:clf$fit$y<-clf$fit$y>0.5
+1586098643904:#we can calculate the accuarcy using score
+1586098643923:# Create binary variable for rain tomorrow
+1586098643940:regression_df$Tomorrow_bin<-regression_df$Tomorrow>0
+1586098655299:score = sum(regression_df$Tomorrow_bin==clf$fit$y) / length(regression_df$Tomorrow_bin)
+1586098658851:print(score)
+1586098703296:#we can also make a simple confusion matrix
+1586098703314:confusion_matrix<-table(clf$fit$y, regression_df$Tomorrow_bin)
+1586098706717:names(attributes(confusion_matrix)$dimnames)<-c("Predicted", "Actual")
+1586098707540:confusion_matrix
+1586098719089:#Here is a bit nicer matrix
+1586098719106:image(confusion_matrix, xlab="Predicted", ylab="Actual", xaxt="n", yaxt="n")
+1586098722279:axis(side = 1, at=c(0,1), labels=c("FALSE","TRUE"))
+1586098723034:axis(side = 2, at=c(0,1), labels=c("FALSE","TRUE"))
+1586098772951:df <- read.csv('~/data/seattle_weather_1948-2017.csv')
+1586098774075:numrows <- 25549 # can be as large as 25549
+1586098774820:#create an empty dataframe to hold values
+1586098774838:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1586098775353:regression_df$Today<-0
+1586098775847:regression_df$Tomorrow<-0
+1586098776557:# Populate regression DF
+1586098776578:for(i in seq(1,numrows,1)){
+1586098776597:tomorrow <- df[(i+1),2]
+1586098776620:today <-df[(i),2]
+1586098776640:regression_df[i,2] <- tomorrow
+1586098776659:regression_df[i,1] <- today
+1586098776677:}
+1586098785467:regression_df <- regression_df[complete.cases(regression_df),] #exclude any rows with missing data
+1586098787866:# Train decision tree using parsnip, a great library for training models!
+1586098787884:# Create binary variable for rain tomorrow
+1586098787902:regression_df$Tomorrow_bin<-regression_df$Tomorrow>0
+1586098791339:clf<-decision_tree(mode="classification")
+1586098796655:clf<-fit(clf, Tomorrow_bin ~ Today, data = regression_df)
+1586098806692:clf$fit$y
+1586098812193:View(clf)
+1586098847085:clf<-decision_tree(mode="regression")
+1586098848388:clf<-fit(clf, Tomorrow ~ Today, data = regression_df)
+1586098850537:clf$fit$y<-clf$fit$y>0.5
+1586098859852:clf$fit$y
+1586098864808:s
+1586098867725:#we can calculate the accuarcy using score
+1586098867744:score = sum(regression_df$Tomorrow_bin==clf$fit$y) / length(regression_df$Tomorrow_bin)
+1586098868518:print(score)
+1586098870572:#we can also make a simple confusion matrix
+1586098870591:confusion_matrix<-table(clf$fit$y, regression_df$Tomorrow_bin)
+1586098871532:names(attributes(confusion_matrix)$dimnames)<-c("Predicted", "Actual")
+1586098872303:confusion_matrix
+1586098873347:#Here is a bit nicer matrix
+1586098873368:image(confusion_matrix, xlab="Predicted", ylab="Actual", xaxt="n", yaxt="n")
+1586098874195:axis(side = 1, at=c(0,1), labels=c("FALSE","TRUE"))
+1586098874849:axis(side = 2, at=c(0,1), labels=c("FALSE","TRUE"))
+1586099086920:clf<- fit(clf, Tomorrow ~ Today, data = regression_df)
+1586099092718:# Fit the random forest model
+1586099092736:clf <- rand_forest(mode="regression")
+1586099094925:clf<- fit(clf, Tomorrow ~ Today, data = regression_df)
+1586099115119:clf$fit$predictions
+1586099167946:clf$fit$y<-clf$fit$y>0.5
+1586099179146:clf$fit$predictions<-clf$fit$predictions>0.5
+1586099295322:library(parsnip)
+1586099297997:df <- read.csv('~/data/seattle_weather_1948-2017.csv')
+1586099298753:numrows <- 25549 # can be as large as 25549
+1586099299343:#create an empty dataframe to hold values
+1586099299364:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1586099299836:regression_df$Today<-0
+1586099300218:regression_df$Tomorrow<-0
+1586099300849:# Populate regression DF
+1586099300878:for(i in seq(1,numrows,1)){
+1586099300898:tomorrow <- df[(i+1),2]
+1586099300925:today <-df[(i),2]
+1586099300951:regression_df[i,2] <- tomorrow
+1586099300972:regression_df[i,1] <- today
+1586099300989:}
+1586099306195:regression_df <- regression_df[complete.cases(regression_df),] #exclude any rows with missing data
+1586099306216:View(regression_df[seq(1,20,1),])
+1586099306235:# Fit the random forest model
+1586099306251:clf <- rand_forest(mode="regression")
+1586099306275:clf<- fit(clf, Tomorrow ~ Today, data = regression_df)
+1586099309962:clf$fit$predictions<-clf$fit$predictions>0.5
+1586099309980:#we can calculate the accuarcy using score
+1586099309997:regression_df$Tomorrow_bin<-regression_df$Tomorrow>0
+1586099310014:score = sum(regression_df$Tomorrow_bin==clf$fit$predictions) / length(regression_df$Tomorrow_bin)
+1586099314853:print(score)
+1586099316783:#we can also make a simple confusion matrix
+1586099316805:confusion_matrix<-table(clf$fit$y, regression_df$Tomorrow_bin)
+1586099328166:#we can also make a simple confusion matrix
+1586099328186:confusion_matrix<-table(clf$fit$predictions, regression_df$Tomorrow_bin)
+1586099330512:names(attributes(confusion_matrix)$dimnames)<-c("Predicted", "Actual")
+1586099331308:confusion_matrix
+1586099334907:#Here is a bit nicer matrix
+1586099334946:image(confusion_matrix, xlab="Predicted", ylab="Actual", xaxt="n", yaxt="n")
+1586099336163:axis(side = 1, at=c(0,1), labels=c("FALSE","TRUE"))
+1586099337556:axis(side = 2, at=c(0,1), labels=c("FALSE","TRUE"))
+1586099518809:library(parsnip)
+1586099519472:df <- read.csv('~/data/seattle_weather_1948-2017.csv')
+1586099520216:numrows <- 25549 # can be as large as 25549
+1586099520781:#create an empty dataframe to hold values
+1586099520803:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1586099521253:regression_df$Today<-0
+1586099521653:regression_df$Tomorrow<-0
+1586099522139:# Populate regression DF
+1586099522160:for(i in seq(1,numrows,1)){
+1586099522180:tomorrow <- df[(i+1),2]
+1586099522200:today <-df[(i),2]
+1586099522219:regression_df[i,2] <- tomorrow
+1586099522238:regression_df[i,1] <- today
+1586099522255:}
+1586099530148:regression_df <- regression_df[complete.cases(regression_df),] #exclude any rows with missing data
+1586099530176:View(regression_df[seq(1,20,1),])
+1586099530255:# Train decision tree using parsnip, a great library for training models!
+1586099530277:# Create binary variable for rain tomorrow
+1586099530300:regression_df$Tomorrow_bin<-regression_df$Tomorrow>0
+1586099530320:clf<-decision_tree(mode="regression")
+1586099530342:clf<-fit(clf, Tomorrow ~ Today, data = regression_df)
+1586099530790:clf$fit$y<-clf$fit$y>0.5
+1586099535807:#we can calculate the accuarcy using score
+1586099535832:score = sum(regression_df$Tomorrow_bin==clf$fit$y) / length(regression_df$Tomorrow_bin)
+1586099536847:print(score)
+1586099538234:#we can also make a simple confusion matrix
+1586099538250:confusion_matrix<-table(clf$fit$y, regression_df$Tomorrow_bin)
+1586099538820:names(attributes(confusion_matrix)$dimnames)<-c("Predicted", "Actual")
+1586099539370:confusion_matrix
+1586099540928:#Here is a bit nicer matrix
+1586099540945:image(confusion_matrix, xlab="Predicted", ylab="Actual", xaxt="n", yaxt="n")
+1586099541748:axis(side = 1, at=c(0,1), labels=c("FALSE","TRUE"))
+1586099543489:axis(side = 2, at=c(0,1), labels=c("FALSE","TRUE"))
+1586099548022:View(clf)
+1586278837994:# Here is an example of how to build and populate
+1586278838057:# a heuristic model
+1586278838082:library(tidyverse)
+1586278839872:df <- read.csv("~/data/seattle_weather_1948-2017.csv")
+1586278841020:numrow = 25549
+1586278841786:heuristic_df <- data.frame("Yesterday" = 0,
+1586278841825:"Today" = 0,
+1586278841860:"Tomorrow" = 0,
+1586278841909:"Guess" = FALSE,
+1586278841947:"Rain Tomorrow" = FALSE,
+1586278841991:"Correct" = FALSE,
+1586278842028:"True Positive" = FALSE,
+1586278842060:"False Positive" = FALSE,
+1586278842094:"True Negative" = FALSE,
+1586278842136:"False Negative" = FALSE)
+1586278842893:df$PRCP = ifelse(is.na(df$PRCP),
+1586278842939:ave(df$PRCP, FUN = function(x) mean(x, na.rm = TRUE)),
+1586278842980:df$PRCP)
+1586278844443:for (z in 1:numrow){
+1586278844477:i = z + 2
+1586278844508:yesterday = df[i-2,2]
+1586278844537:today = df[i-1,2]
+1586278844588:tomorrow = df[i,2]
+1586278844627:if (tomorrow == 0){
+1586278844655:rain_tomorrow = FALSE
+1586278844699:}else{
+1586278844731:rain_tomorrow = TRUE
+1586278844773:}
+1586278844821:heuristic_df[z,1] = yesterday
+1586278844871:heuristic_df[z,2] = today
+1586278844912:heuristic_df[z,3] = tomorrow
+1586278844976:heuristic_df[z,4] = FALSE # Label all guesses as false
+1586278845027:heuristic_df[z,5] = rain_tomorrow
+1586278845056:heuristic_df[z,7] = FALSE
+1586278845080:heuristic_df[z,8] = FALSE
+1586278845103:heuristic_df[z,9] = FALSE
+1586278845141:heuristic_df[z,10] = FALSE
+1586278845198:if ((today > 0) & (yesterday > 0)){
+1586278845228:heuristic_df[z,4] = TRUE
+1586278845249:}
+1586278845271:if (heuristic_df[z,4] == heuristic_df[z,5]){
+1586278845310:heuristic_df[z,6] = TRUE
+1586278845354:if (heuristic_df[z,4] == TRUE){
+1586278845437:heuristic_df[z,7] = TRUE #true positive
+1586278845521:}else{
+1586278845581:heuristic_df[z,9] = TRUE #True negative
+1586278845634:}
+1586278845694:}else{
+1586278845761:heuristic_df[z,6] = FALSE
+1586278845816:if (heuristic_df[z,4] == TRUE){
+1586278845904:heuristic_df[z,7] = TRUE #false positive
+1586278845986:}else{
+1586278846037:heuristic_df[z,9] = TRUE #false negative
+1586278846079:}
+1586278846109:}
+1586278846131:}
+1586278960937:View(heuristic_df)
+1586279030657:df <- read_csv('~/data/seattle_weather_1948-2017.csv')
+1586279031405:df[is.na(df)]<-0
+1586279033036:# Create an empty dataframe
+1586279033066:heuristic_df<-data.frame(matrix(, nrow=nrow(df)-2, ncol=0))
+1586279033498:heuristic_df$Yesterday<-0
+1586279033991:heuristic_df$Today<-0
+1586279034345:heuristic_df$Tomorrow<-0
+1586279034669:heuristic_df$Guess<-FALSE
+1586279035025:heuristic_df$Rain_tomorrow<-FALSE
+1586279035551:heuristic_df$Correct<-FALSE
+1586279037206:# View first 10 rows of each dataframe
+1586279037228:View(df[seq(1,10,1),])
+1586279052355:head(heuristic_df)
+1586279074563:head(heuristic_df, 10)
+1586279082214:# View first 10 rows of each dataframe
+1586279082236:head(df, 10)
+1586279082601:head(heuristic_df, 10)
+1586279085026:for(z in seq(1,nrow(df)-2,1)) {
+1586279085056:#start at time 2 in the data frame
+1586279085076:i <- z + 2
+1586279085116:#pull values from the dataframe
+1586279085141:yesterday <- df[(i-2),2]
+1586279085169:today <- df[(i-1),2]
+1586279085191:tomorrow <- df[i,2]
+1586279085212:rain_tomorrow <- tomorrow>0
+1586279085245:heuristic_df[z,1] <- yesterday
+1586279085266:heuristic_df[z,2] <- today
+1586279085289:heuristic_df[z,3] <- tomorrow
+1586279085308:heuristic_df[z,4] <- FALSE # set guess default to False
+1586279085329:heuristic_df[z,5] <- rain_tomorrow
+1586279085392:######### uncomment and create your heuristic guess ################
+1586279085414:#if( ##### your conditions here #########){
+1586279085437:#    heuristic_df[z,4] <- TRUE
+1586279085461:# }
+1586279085489:####################################################################
+1586279085528:if(heuristic_df[z,4] == heuristic_df[z,5])  heuristic_df[z,6] <- TRUE
+1586279085551:else heuristic_df[z,6] <- FALSE
+1586279085570:}
+1586279143879:sum(heuristic_df$Correct)/nrow(heuristic_df)
+1586279192667:# Logistic Regression
+1586279192702:# Using the same seattle weather data as last chapter develop a logistic regression model
+1586279192735:#import the pakcages that we will need
+1586279192764:library(ggplot2)
+1586279193490:library(glmnet)
+1586279194649:df <- read.csv('~/data/seattle_weather_1948-2017.csv')
+1586279195519:numrows <- 25549 # can be as large as 25549
+1586279196062:#create an empty dataframe to hold values
+1586279196085:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1586279196883:regression_df$Today<-0
+1586279197468:regression_df$Tomorrow<-0
+1586279198084:# Populate regression DF
+1586279198103:for(i in seq(1,numrows,1)){
+1586279198124:tomorrow <- df[(i+1),2]
+1586279198150:today <-df[(i),2]
+1586279198170:regression_df[i,2] <- tomorrow
+1586279198188:regression_df[i,1] <- today
+1586279198209:}
+1586279205026:regression_df <- regression_df[complete.cases(regression_df),] #exclude any rows with missing data
+1586279205705:# View first 20 rows
+1586279205726:head(regression_df,20)
+1586279206621:# Train Logistic Model
+1586279206641:# Create binary variable for rain tomorrow
+1586279206660:regression_df$Tomorrow_bin<-regression_df$Tomorrow>0
+1586279207721:clf <- glm(Tomorrow_bin ~ Today, data = regression_df, family = "binomial")
+1586279208522:#we can calculate the accuarcy using the score method
+1586279208545:clf$fitted.values<-clf$fitted.values>=0.5
+1586279209138:score = sum(regression_df$Tomorrow_bin==clf$fitted.values) / length(regression_df$Tomorrow_bin)
+1586279209608:print(score)
+1586279210689:#we can also make a simple confusion matrix
+1586279210709:confusion_matrix<-table(clf$fitted.values, regression_df$Tomorrow_bin)
+1586279211302:names(attributes(confusion_matrix)$dimnames)<-c("Predicted", "Actual")
+1586279212223:confusion_matrix
+1586279214891:#Here is a bit nicer matrix
+1586279214916:image(confusion_matrix, xlab="Predicted", ylab="Actual", xaxt="n", yaxt="n")
+1586279215329:axis(side = 1, at=c(0,1), labels=c("FALSE","TRUE"))
+1586279215955:axis(side = 2, at=c(0,1), labels=c("FALSE","TRUE"))
+1586279234388:#import the pakcages that we will need
+1586279234414:library(ggplot2)
+1586279234873:df <- read.csv('~/data/seattle_weather_1948-2017.csv')
+1586279235287:numrows <- 25549 # can be as large as 25549
+1586279235731:#create an empty dataframe to hold values
+1586279235751:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1586279236036:regression_df$Intercept<-1
+1586279236372:regression_df$Today<-0
+1586279236687:regression_df$Tomorrow<-0
+1586279237133:# Populate regression DF
+1586279237149:for(i in seq(1,numrows,1)){
+1586279237168:tomorrow <- df[(i+1),2]
+1586279237185:today <-df[(i),2]
+1586279237205:regression_df[i,3] <- tomorrow
+1586279237225:regression_df[i,2] <- today
+1586279237248:}
+1586279244426:regression_df <- regression_df[complete.cases(regression_df),] #exclude any rows with missing data
+1586279245135:#this makes a simple dataframe with a relationship that we can now plot
+1586279245152:ggplot(regression_df) +
+1586279245174:geom_point(mapping = aes(x = Today, y = Tomorrow))
+1586279248432:# Creating a basic linear model to best predict these values.
+1586279248451:# Start with a slope and intercept values of 1 and then iterate through gradient descent.
+1586279248468:gradientDescent <- function(X, y, param, alpha, num_iters){
+1586279248486:for (i in 1:num_iters){
+1586279248504:y_hat = as.matrix(X)%*%param
+1586279248522:param = param - alpha*(t(as.matrix(X))%*%(as.matrix(y_hat-y)))
+1586279248538:}
+1586279248555:return(param)
+1586279248571:}
+1586279250992:# In this fucntion param is the initial guess of the values of the linear function,
+1586279251015:# X is the vector of data values and y is the realization
+1586279251034:X <- regression_df[0:200,1:2]
+1586279251934:y <- as.data.frame(regression_df[0:200,3])
+1586279253364:param <- matrix(c(1,1),nrow = 2)
+1586279253535:alpha <- 0.0001
+1586279254344:num_iters <- 1000
+1586279255393:solution <- gradientDescent(X, y, param, alpha, num_iters)
+1586279257426:solution
+1586279260744:ggplot(regression_df) +
+1586279260761:geom_point(mapping = aes(x = Today, y = Tomorrow))+
+1586279260778:geom_abline(intercept=solution[1], slope=solution[2])
+1586279264220:mymodel <- lm(regression_df$Today ~ regression_df$Tomorrow, data = regression_df)
+1586279265335:print(mymodel)
+1586279267279:regression_df$Predictions<-predict.lm(mymodel)
+1586279270855:ggplot(regression_df) +
+1586279270876:geom_point(mapping = aes(x = Today, y = Tomorrow), color="black")+
+1586279270901:geom_point(mapping = aes(x = Today, y = Predictions), color="blue")+
+1586279270920:geom_abline(intercept=solution[1], slope=mymodel$coefficients[2], color = "blue")
+1586279276289:# using the r2 (pronounced r squared) value we can get a basic measure of model quality
+1586279276311:summary(mymodel)$r.squared
+1586279279520:ggplot(regression_df) +
+1586279279543:geom_point(mapping = aes(y = Predictions, x = Tomorrow), color="black")+
+1586279279566:scale_y_continuous(limits = c(0,5))+
+1586279279587:scale_x_continuous(limits = c(0,5))
+1586279311532:library(parsnip)
+1586279312005:df <- read.csv('~/data/seattle_weather_1948-2017.csv')
+1586279312716:numrows <- 25549 # can be as large as 25549
+1586279313355:#create an empty dataframe to hold values
+1586279313380:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1586279313814:regression_df$Today<-0
+1586279314126:regression_df$Tomorrow<-0
+1586279314626:# Populate regression DF
+1586279314644:for(i in seq(1,numrows,1)){
+1586279314661:tomorrow <- df[(i+1),2]
+1586279314677:today <-df[(i),2]
+1586279314696:regression_df[i,2] <- tomorrow
+1586279314714:regression_df[i,1] <- today
+1586279314732:}
+1586279348560:regression_df <- regression_df[complete.cases(regression_df),] #exclude any rows with missing data
+1586279350016:View(regression_df[seq(1,20,1),])
+1586279369014:head(regression_df,20)
+1586279369888:# Fit the random forest model
+1586279369906:clf <- rand_forest(mode="regression")
+1586279370381:clf<- fit(clf, Tomorrow ~ Today, data = regression_df)
+1586279373338:clf$fit$predictions<-clf$fit$predictions>0.5
+1586279373358:#we can calculate the accuarcy using score
+1586279373375:regression_df$Tomorrow_bin<-regression_df$Tomorrow>0
+1586279373394:score = sum(regression_df$Tomorrow_bin==clf$fit$predictions) / length(regression_df$Tomorrow_bin)
+1586279373411:print(score)
+1586279375746:#we can also make a simple confusion matrix
+1586279375764:confusion_matrix<-table(clf$fit$predictions, regression_df$Tomorrow_bin)
+1586279376157:names(attributes(confusion_matrix)$dimnames)<-c("Predicted", "Actual")
+1586279376613:confusion_matrix
+1586279377964:#Here is a bit nicer matrix
+1586279377982:image(confusion_matrix, xlab="Predicted", ylab="Actual", xaxt="n", yaxt="n")
+1586279378835:axis(side = 1, at=c(0,1), labels=c("FALSE","TRUE"))
+1586279379720:axis(side = 2, at=c(0,1), labels=c("FALSE","TRUE"))
+1586367589500:#import the pakcages that we will need
+1586367589528:library(ggplot2)
+1586367590189:df <- read.csv('~/data/seattle_weather_1948-2017.csv')
+1586367593173:numrows <- 25549 # can be as large as 25549
+1586367594310:#create an empty dataframe to hold values
+1586367594329:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1586367595024:regression_df$Intercept<-1
+1586367595547:regression_df$Today<-0
+1586367596148:regression_df$Tomorrow<-0
+1586367607548:# Populate regression DF
+1586367607583:for(i in seq(1,numrows,1)){
+1586367607606:tomorrow <- df[(i+1),2]
+1586367607624:today <-df[(i),2]
+1586367607645:regression_df[i,3] <- tomorrow
+1586367607666:regression_df[i,2] <- today
+1586367607684:}
+1586367630959:regression_df <- regression_df[complete.cases(regression_df),] #exclude any rows with missing data
+1586367642049:View(regression_df)
+1586367656321:regression_df <- regression_df[complete.cases(regression_df),] #exclude any rows with missing data
+1586367659287:#this makes a simple dataframe with a relationship that we can now plot
+1586367659306:ggplot(regression_df) +
+1586367659328:geom_point(mapping = aes(x = Today, y = Tomorrow))
+1586367665091:# Creating a basic linear model to best predict these values.
+1586367665121:# Start with a slope and intercept values of 1 and then iterate through gradient descent.
+1586367665154:gradientDescent <- function(X, y, param, alpha, num_iters){
+1586367665204:for (i in 1:num_iters){
+1586367665238:y_hat = as.matrix(X)%*%param
+1586367665276:param = param - alpha*(t(as.matrix(X))%*%(as.matrix(y_hat-y)))
+1586367665308:}
+1586367665333:return(param)
+1586367665362:}
+1586367667528:# Creating a basic linear model to best predict these values.
+1586367667545:# Start with a slope and intercept values of 1 and then iterate through gradient descent.
+1586367667561:gradientDescent <- function(X, y, param, alpha, num_iters){
+1586367667579:for (i in 1:num_iters){
+1586367667597:y_hat = as.matrix(X)%*%param
+1586367667614:param = param - alpha*(t(as.matrix(X))%*%(as.matrix(y_hat-y)))
+1586367667632:}
+1586367667650:return(param)
+1586367667669:}
+1586367671412:# In this fucntion param is the initial guess of the values of the linear function,
+1586367671432:# X is the vector of data values and y is the realization
+1586367671456:X <- regression_df[0:200,1:2]
+1586367673759:y <- as.data.frame(regression_df[0:200,3])
+1586367675114:param <- matrix(c(1,1),nrow = 2)
+1586367675995:alpha <- 0.0001
+1586367676976:num_iters <- 1000
+1586367679119:solution <- gradientDescent(X, y, param, alpha, num_iters)
+1586367681955:solution
+1586367684898:ggplot(regression_df) +
+1586367684915:geom_point(mapping = aes(x = Today, y = Tomorrow))+
+1586367684933:geom_abline(intercept=solution[1], slope=solution[2])
+1586367693946:mymodel <- lm(regression_df$Today ~ regression_df$Tomorrow, data = regression_df)
+1586367698358:print(mymodel)
+1586367708463:regression_df$Predictions<-predict.lm(mymodel)
+1586367718766:View(regression_df)
+1586367730858:# Look at the plots of real values in black and predicted values in blue
+1586367730886:ggplot(regression_df) +
+1586367730928:geom_point(mapping = aes(x = Today, y = Tomorrow), color="black")+
+1586367730953:geom_point(mapping = aes(x = Today, y = Predictions), color="blue")+
+1586367730982:geom_abline(intercept=solution[1], slope=mymodel$coefficients[2], color = "blue")
+1586367743419:# using the r2 (pronounced r squared) value we can get a basic measure of model quality
+1586367743450:summary(mymodel)$r.squared
+1586367754785:ggplot(regression_df) +
+1586367754831:geom_point(mapping = aes(y = Predictions, x = Tomorrow), color="black")+
+1586367754890:scale_y_continuous(limits = c(0,5))+
+1586367754938:scale_x_continuous(limits = c(0,5))
+1586367813286:###################### adjust this code to add columns here #######################################
+1586367813329:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1586367814040:regression_df$Today<-0
+1586367815030:regression_df$Tomorrow<-0
+1586367817555:# Populate regression DF
+1586367817575:for(i in seq(1,numrows,1)){
+1586367817601:tomorrow <- df[(i+1),2]
+1586367817631:today <-df[(i),2]
+1586367817654:regression_df[i,3] <- tomorrow
+1586367817674:regression_df[i,2] <- today
+1586367817696:}
+1586367824617:regression_df <- regression_df[complete.cases(regression_df),] #exclude any rows with missing data
+1586367827406:View(regression_df)
+1586367861347:# Logistic Regression
+1586367861408:# Using the same seattle weather data as last chapter develop a logistic regression model
+1586367861433:#import the pakcages that we will need
+1586367861473:library(ggplot2)
+1586367862006:library(glmnet)
+1586367862691:df <- read.csv('~/data/seattle_weather_1948-2017.csv')
+1586367864049:numrows <- 25549 # can be as large as 25549
+1586367865106:#create an empty dataframe to hold values
+1586367865145:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1586367865896:regression_df$Today<-0
+1586367866486:regression_df$Tomorrow<-0
+1586367867096:# Populate regression DF
+1586367867125:for(i in seq(1,numrows,1)){
+1586367867148:tomorrow <- df[(i+1),2]
+1586367867175:today <-df[(i),2]
+1586367867194:regression_df[i,2] <- tomorrow
+1586367867214:regression_df[i,1] <- today
+1586367867236:}
+1586367873652:regression_df <- regression_df[complete.cases(regression_df),] #exclude any rows with missing data
+1586367873695:# View first 20 rows
+1586367873718:head(regression_df,20)
+1586367881739:# Train Logistic Model
+1586367881770:# Create binary variable for rain tomorrow
+1586367881800:regression_df$Tomorrow_bin<-regression_df$Tomorrow>0
+1586367889782:clf <- glm(Tomorrow_bin ~ Today, data = regression_df, family = "binomial")
+1586367892574:#we can calculate the accuarcy using the score method
+1586367892617:clf$fitted.values<-clf$fitted.values>=0.5
+1586367894052:score = sum(regression_df$Tomorrow_bin==clf$fitted.values) / length(regression_df$Tomorrow_bin)
+1586367894925:print(score)
+1586367905059:#we can also make a simple confusion matrix
+1586367905084:confusion_matrix<-table(clf$fitted.values, regression_df$Tomorrow_bin)
+1586367906644:names(attributes(confusion_matrix)$dimnames)<-c("Predicted", "Actual")
+1586367909040:confusion_matrix
+1586367917610:#Here is a bit nicer matrix
+1586367917633:image(confusion_matrix, xlab="Predicted", ylab="Actual", xaxt="n", yaxt="n")
+1586367919674:axis(side = 1, at=c(0,1), labels=c("FALSE","TRUE"))
+1586367921640:axis(side = 2, at=c(0,1), labels=c("FALSE","TRUE"))
+1586367932205:numrows = 25547
+1586367933142:###################### adjust this code to add columns here #######################################
+1586367933170:#create an empty dataframe to hold values
+1586367933193:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1586367933689:regression_df$Today<-0
+1586367934255:regression_df$Tomorrow<-0
+1586367934801:# Populate regression DF
+1586367934835:for(i in seq(1,numrows,1)){
+1586367934866:tomorrow <- df[(i+1),2]
+1586367934901:today <-df[(i),2]
+1586367934939:regression_df[i,2] <- tomorrow
+1586367934971:regression_df[i,1] <- today
+1586367935012:}
+1586367941640:regression_df <- regression_df[complete.cases(regression_df),] #exclude any rows with missing data
+1586367962879:View(regression_df)
+1586367983274:library(parsnip)
+1586367984220:df <- read.csv('~/data/seattle_weather_1948-2017.csv')
+1586367987676:numrows <- 25549 # can be as large as 25549
+1586367997583:#create an empty dataframe to hold values
+1586367997605:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1586368006662:regression_df$Today<-0
+1586368008250:regression_df$Tomorrow<-0
+1586368014351:# Populate regression DF
+1586368014389:for(i in seq(1,numrows,1)){
+1586368014410:tomorrow <- df[(i+1),2]
+1586368014431:today <-df[(i),2]
+1586368014451:regression_df[i,2] <- tomorrow
+1586368014471:regression_df[i,1] <- today
+1586368014487:}
+1586368022258:regression_df <- regression_df[complete.cases(regression_df),] #exclude any rows with missing data
+1586368027127:View(regression_df[seq(1,20,1),])
+1586368036534:# Train decision tree using parsnip, a great library for training models!
+1586368036555:# Create binary variable for rain tomorrow
+1586368036580:regression_df$Tomorrow_bin<-regression_df$Tomorrow>0
+1586368041981:View(regression_df)
+1586368052924:clf<-decision_tree(mode="regression")
+1586368063567:clf<-fit(clf, Tomorrow ~ Today, data = regression_df)
+1586368071543:clf$fit$y<-clf$fit$y>0.5
+1586368076830:#we can calculate the accuarcy using score
+1586368076850:score = sum(regression_df$Tomorrow_bin==clf$fit$y) / length(regression_df$Tomorrow_bin)
+1586368077517:print(score)
+1586368080951:#we can also make a simple confusion matrix
+1586368080968:confusion_matrix<-table(clf$fit$y, regression_df$Tomorrow_bin)
+1586368081791:names(attributes(confusion_matrix)$dimnames)<-c("Predicted", "Actual")
+1586368083416:confusion_matrix
+1586368084341:#Here is a bit nicer matrix
+1586368084366:image(confusion_matrix, xlab="Predicted", ylab="Actual", xaxt="n", yaxt="n")
+1586368085505:axis(side = 1, at=c(0,1), labels=c("FALSE","TRUE"))
+1586368086472:axis(side = 2, at=c(0,1), labels=c("FALSE","TRUE"))
+1586368132749:library(parsnip)
+1586368133012:df <- read.csv('~/data/seattle_weather_1948-2017.csv')
+1586368133430:numrows <- 25549 # can be as large as 25549
+1586368134243:#create an empty dataframe to hold values
+1586368134271:regression_df<-data.frame(matrix(, nrow=numrows, ncol=0))
+1586368134505:regression_df$Today<-0
+1586368135183:regression_df$Tomorrow<-0
+1586368135751:# Populate regression DF
+1586368135774:for(i in seq(1,numrows,1)){
+1586368135801:tomorrow <- df[(i+1),2]
+1586368135831:today <-df[(i),2]
+1586368135852:regression_df[i,2] <- tomorrow
+1586368135873:regression_df[i,1] <- today
+1586368135907:}
+1586368158846:regression_df <- regression_df[complete.cases(regression_df),] #exclude any rows with missing data
+1586368160891:head(regression_df,20)
+1586368163064:# Fit the random forest model
+1586368163083:clf <- rand_forest(mode="regression")
+1586368163979:clf<- fit(clf, Tomorrow ~ Today, data = regression_df)
+1586368166768:clf$fit$predictions<-clf$fit$predictions>0.5
+1586368166796:#we can calculate the accuarcy using score
+1586368166825:regression_df$Tomorrow_bin<-regression_df$Tomorrow>0
+1586368173368:score = sum(regression_df$Tomorrow_bin==clf$fit$predictions) / length(regression_df$Tomorrow_bin)
+1586368175059:print(score)
+1586368177561:#we can also make a simple confusion matrix
+1586368177578:confusion_matrix<-table(clf$fit$predictions, regression_df$Tomorrow_bin)
+1586368178389:names(attributes(confusion_matrix)$dimnames)<-c("Predicted", "Actual")
+1586368179835:confusion_matrix
+1586368184375:#Here is a bit nicer matrix
+1586368184395:image(confusion_matrix, xlab="Predicted", ylab="Actual", xaxt="n", yaxt="n")
+1586368189545:axis(side = 1, at=c(0,1), labels=c("FALSE","TRUE"))
+1586368189791:axis(side = 2, at=c(0,1), labels=c("FALSE","TRUE"))
