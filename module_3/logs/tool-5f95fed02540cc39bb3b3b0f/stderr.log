@@ -1,0 +1,24 @@
+[I 15:40:22.384 LabApp] Writing notebook server cookie secret to /app/jupyter/jupyterhub_cookie_secret
+[W 15:40:22.593 LabApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
+[I 15:40:22.601 LabApp] JupyterLab extension loaded from /opt/conda/lib/python3.7/site-packages/jupyterlab
+[I 15:40:22.602 LabApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+[I 15:40:22.603 LabApp] Serving notebooks from local directory: /home/matrix
+[I 15:40:22.603 LabApp] The Jupyter Notebook is running at:
+[I 15:40:22.603 LabApp] http://tool-5f95fed02540cc39bb3b3b0f-vhwrb:8888/
+[I 15:40:22.603 LabApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 15:40:45.281 LabApp] 302 GET / (10.60.20.117) 0.80ms
+[I 15:40:48.045 LabApp] Build is up to date
+[I 15:40:53.212 LabApp] Kernel started: 4f7a0c31-35ba-4fb6-b188-70762ace34df
+[I 15:40:57.944 LabApp] New terminal with automatic name: 1
+TermSocket.open: 1
+TermSocket.open: Opened 1
+[I 15:49:32.082 LabApp] 302 GET / (10.60.20.117) 0.93ms
+[I 15:49:32.203 LabApp] Starting buffering for 4f7a0c31-35ba-4fb6-b188-70762ace34df:2f82ed9e-8ade-40ec-b308-93e4926c88bf
+Websocket closed
+[I 15:49:34.049 LabApp] Build is up to date
+TermSocket.open: 1
+TermSocket.open: Opened 1
+[I 15:50:10.184 LabApp] Build is up to date
+TermSocket.open: 1
+TermSocket.open: Opened 1
+Websocket closed
