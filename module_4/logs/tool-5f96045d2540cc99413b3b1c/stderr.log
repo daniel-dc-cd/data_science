@@ -1,0 +1,21 @@
+[I 16:04:03.305 LabApp] Writing notebook server cookie secret to /app/jupyter/jupyterhub_cookie_secret
+[W 16:04:03.532 LabApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
+[I 16:04:03.541 LabApp] JupyterLab extension loaded from /opt/conda/lib/python3.7/site-packages/jupyterlab
+[I 16:04:03.541 LabApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+[I 16:04:03.543 LabApp] Serving notebooks from local directory: /home/matrix
+[I 16:04:03.543 LabApp] The Jupyter Notebook is running at:
+[I 16:04:03.543 LabApp] http://tool-5f96045d2540cc99413b3b1c-vrxgv:8888/
+[I 16:04:03.543 LabApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 16:04:08.771 LabApp] 302 GET / (10.60.20.117) 0.72ms
+[I 16:04:12.172 LabApp] Build is up to date
+[W 16:04:12.708 LabApp] 404 GET /api/contents/Day_1%20(Heuristic%20Model)/cost_function_assignment.ipynb?content=0&1603667047890 (10.60.20.117): No such file or directory: Day_1 (Heuristic Model)/cost_function_assignment.ipynb
+[W 16:04:12.708 LabApp] No such file or directory: Day_1 (Heuristic Model)/cost_function_assignment.ipynb
+[W 16:04:12.709 LabApp] 404 GET /api/contents/Day_1%20(Heuristic%20Model)/cost_function_assignment.ipynb?content=0&1603667047890 (10.60.20.117) 2.07ms referer=https://codingdojo-5f96044e2540cca5533b3b15-5f96045d2540cc99413b3b1c.platform.matrixds.com/lab?
+[I 16:04:12.942 LabApp] Writing notebook-signing key to /app/jupyter/secret_file
+[W 16:04:12.943 LabApp] Notebook PythonDataScienceHandbook/notebooks/00.00-Preface.ipynb is not trusted
+[W 16:04:12.990 LabApp] Notebook PythonDataScienceHandbook/notebooks/05.12-Gaussian-Mixtures.ipynb is not trusted
+[I 16:04:13.269 LabApp] Kernel started: 815663a6-60dd-4594-b4dd-9db195a0c16f
+[I 16:04:14.277 LabApp] Kernel started: 8261d099-766a-4443-bade-c3d6f0ef4c31
+[I 16:04:45.774 LabApp] New terminal with automatic name: 1
+TermSocket.open: 1
+TermSocket.open: Opened 1

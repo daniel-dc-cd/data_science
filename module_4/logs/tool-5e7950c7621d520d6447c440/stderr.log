@@ -1,0 +1,49 @@
+[I 17:14:05.716 LabApp] Writing notebook server cookie secret to /app/jupyter/jupyterhub_cookie_secret
+[W 17:14:05.973 LabApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
+[I 17:14:05.985 LabApp] JupyterLab extension loaded from /opt/conda/lib/python3.7/site-packages/jupyterlab
+[I 17:14:05.985 LabApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+[I 17:14:05.987 LabApp] Serving notebooks from local directory: /home/matrix
+[I 17:14:05.987 LabApp] The Jupyter Notebook is running at:
+[I 17:14:05.987 LabApp] http://tool-5e7950c7621d520d6447c440-cwppk:8888/
+[I 17:14:05.988 LabApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 17:15:18.369 LabApp] 302 GET / (10.60.8.13) 0.93ms
+[I 17:15:24.545 LabApp] Build is up to date
+[I 17:15:36.689 LabApp] Writing notebook-signing key to /app/jupyter/secret_file
+[W 17:15:36.690 LabApp] Notebook Day_1 (Heuristic Model)/cost_function_assignment.ipynb is not trusted
+[I 17:15:37.613 LabApp] Kernel started: 1a8653b9-5edc-4e18-ac56-cde559f9765c
+[I 22:20:51.163 LabApp] Starting buffering for 1a8653b9-5edc-4e18-ac56-cde559f9765c:4520f03e-ebca-4b7b-ad2f-dbe92d21be20
+[I 22:21:19.450 LabApp] Restoring connection for 1a8653b9-5edc-4e18-ac56-cde559f9765c:4520f03e-ebca-4b7b-ad2f-dbe92d21be20
+[W 17:56:49.452 LabApp] WebSocket ping timeout after 94202 ms.
+[I 17:56:54.457 LabApp] Starting buffering for 1a8653b9-5edc-4e18-ac56-cde559f9765c:4520f03e-ebca-4b7b-ad2f-dbe92d21be20
+[I 17:59:21.392 LabApp] Restoring connection for 1a8653b9-5edc-4e18-ac56-cde559f9765c:4520f03e-ebca-4b7b-ad2f-dbe92d21be20
+[W 18:14:51.394 LabApp] WebSocket ping timeout after 111229 ms.
+[I 18:14:56.398 LabApp] Starting buffering for 1a8653b9-5edc-4e18-ac56-cde559f9765c:4520f03e-ebca-4b7b-ad2f-dbe92d21be20
+[I 18:16:55.926 LabApp] Restoring connection for 1a8653b9-5edc-4e18-ac56-cde559f9765c:4520f03e-ebca-4b7b-ad2f-dbe92d21be20
+[I 09:25:24.450 LabApp] Starting buffering for 1a8653b9-5edc-4e18-ac56-cde559f9765c:4520f03e-ebca-4b7b-ad2f-dbe92d21be20
+[I 16:41:17.257 LabApp] Writing notebook server cookie secret to /app/jupyter/jupyterhub_cookie_secret
+[W 16:41:17.513 LabApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
+[I 16:41:17.525 LabApp] JupyterLab extension loaded from /opt/conda/lib/python3.7/site-packages/jupyterlab
+[I 16:41:17.525 LabApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+[I 16:41:17.528 LabApp] Serving notebooks from local directory: /home/matrix
+[I 16:41:17.528 LabApp] The Jupyter Notebook is running at:
+[I 16:41:17.528 LabApp] http://tool-5e7950c7621d520d6447c440-xl66p:8888/
+[I 16:41:17.528 LabApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 16:41:43.403 LabApp] 302 GET / (10.60.20.117) 0.57ms
+[I 16:41:48.600 LabApp] Build is up to date
+[I 16:41:49.243 LabApp] Writing notebook-signing key to /app/jupyter/secret_file
+[W 16:41:49.244 LabApp] Notebook Day_1 (Heuristic Model)/cost_function_assignment.ipynb is not trusted
+[I 16:41:49.733 LabApp] Kernel started: aa355b8c-16ec-4aec-8edc-c2fc58dc22eb
+[W 16:42:21.738 LabApp] Notebook PythonDataScienceHandbook/notebooks/00.00-Preface.ipynb is not trusted
+[W 16:42:22.004 LabApp] 404 GET /figures/PDSH-cover-small.png (10.60.20.117) 29.69ms referer=https://codingdojo-5e6ad3ae124fc1d875a2932b-5e7950c7621d520d6447c440.platform.matrixds.com/lab?
+[W 16:42:22.008 LabApp] 404 GET /figures/Data_Science_VD.png (10.60.20.117) 2.96ms referer=https://codingdojo-5e6ad3ae124fc1d875a2932b-5e7950c7621d520d6447c440.platform.matrixds.com/lab?
+[I 16:42:22.198 LabApp] Kernel started: 1e10cbfd-6e5a-4e3a-bcf1-47d57c3f6617
+[W 16:43:02.718 LabApp] Notebook PythonDataScienceHandbook/notebooks/05.12-Gaussian-Mixtures.ipynb is not trusted
+[W 16:43:04.437 LabApp] 404 GET /figures/PDSH-cover-small.png (10.60.20.117) 1.55ms referer=https://codingdojo-5e6ad3ae124fc1d875a2932b-5e7950c7621d520d6447c440.platform.matrixds.com/lab?
+[W 16:43:04.458 LabApp] 404 GET /figures/05.12-covariance-type.png (10.60.20.117) 1.33ms referer=https://codingdojo-5e6ad3ae124fc1d875a2932b-5e7950c7621d520d6447c440.platform.matrixds.com/lab?
+[I 16:43:05.467 LabApp] Kernel started: d8d903be-b4ba-4624-aa63-41ec7a2e80df
+[I 16:44:38.342 LabApp] Saving file at /PythonDataScienceHandbook/notebooks/00.00-Preface.ipynb
+[I 16:45:08.784 LabApp] Saving file at /PythonDataScienceHandbook/notebooks/05.12-Gaussian-Mixtures.ipynb
+[W 16:45:08.786 LabApp] Notebook PythonDataScienceHandbook/notebooks/05.12-Gaussian-Mixtures.ipynb is not trusted
+[I 17:01:33.745 LabApp] Starting buffering for d8d903be-b4ba-4624-aa63-41ec7a2e80df:2608a9fb-121a-474c-86fc-bbc0ac07600c
+[I 17:01:33.754 LabApp] Starting buffering for 1e10cbfd-6e5a-4e3a-bcf1-47d57c3f6617:3282412d-6b64-4149-8b30-55df7e3c6282
+[I 17:01:33.755 LabApp] Starting buffering for aa355b8c-16ec-4aec-8edc-c2fc58dc22eb:be171bdc-c757-4e24-8f2a-32cf42a4e75e
