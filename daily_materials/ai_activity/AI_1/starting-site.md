@@ -4,16 +4,16 @@ We'll be adding functionality to an existing website, which represents our clien
 
 ## Obtaining the starter site
 
-The sample code is provided as part of the [Reactors](https://github.com/microsoft/reactors) repository on [GitHub](https://github.com). Let's clone the repository and get the environment setup for the code.
+The sample code is provided here [on my](https://github.com/daniel-dc-cd/data_science/tree/master/daily_materials/ai_activity/AI_1/starter-site)repository on [GitHub](https://github.com). Let's clone the repository and get the environment setup for the code.
 
 ### Clone the repository
 
 1. Open a new command or terminal window to use solely for running your application
 2. Navigate to the folder you want to put the code into, which was created earlier
-3. Clone the repository
+3. Clone the repository https://github.com/daniel-dc-cd/data_science.git
 
 ``` git
-git clone https://github.com/microsoft/reactors
+[git clone https://github.com/daniel-dc-cd/data_science.gits](https://github.com/daniel-dc-cd/data_science.git)
 ```
 
 ### Install Python packages
@@ -22,10 +22,10 @@ git clone https://github.com/microsoft/reactors
 
 ``` console
 # Windows
-cd reactors\AI_1\starter-site
+cd daily_materials\ai_activity\AI_1\starter-site
 
 # Linux or macOS
-cd ./reactors/AI_1/starter-site
+cd ./daily_materials/ai_activity/AI_1/starter-site
 ```
 
 2. Let's create a virtual environment for the packages we'll be using. Virtual environments allow us to separate packages from other environments. Return to the command line and issuing the following command:
