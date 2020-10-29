@@ -13,7 +13,7 @@ The sample code is provided here [on my](https://github.com/daniel-dc-cd/data_sc
 3. Clone the repository https://github.com/daniel-dc-cd/data_science.git
 
 ``` git
-[git clone https://github.com/daniel-dc-cd/data_science.gits](https://github.com/daniel-dc-cd/data_science.git)
+[git clone https://github.com/daniel-dc-cd/data_science.git](https://github.com/daniel-dc-cd/data_science.git)
 ```
 
 ### Install Python packages
