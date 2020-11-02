@@ -6,6 +6,11 @@
 * [Matrix DS Files](https://codingdojo.platform.matrixds.com/projects)
 * [Piazza Platform](https://piazza.com/coding_dojo/fall2020/datascienceimmersive/resources)
 
+#### Competitions
+* [Driven Data](https://www.drivendata.org/competitions/)
+* [Top Coder] (https://www.topcoder.com/challenges?tracks[DS]=true)
+* [Kaggle Competitions](https://www.kaggle.com/competitions)
+
 #### Corporation
 * [IBM Advanced Data Science](https://www.coursera.org/specializations/advanced-data-science-ibm)
 * [Machine Learning with Tensorflow by Google](https://www.coursera.org/specializations/machine-learning-tensorflow-gcp)
@@ -86,3 +91,4 @@
 ### Books for Python
 * [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
 * [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
+

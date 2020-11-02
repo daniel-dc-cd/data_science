@@ -1,3 +1,6 @@
+from azure.cognitiveservices.vision.computervision.models import ComputerVisionErrorException
+from azure.cognitiveservices.vision.computervision import ComputerVisionClient
+from msrest.authentication import CognitiveServicesCredentials
 import os, base64, json, requests
 from flask import Flask, render_template, request
 
@@ -6,8 +9,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Load keys
+COGSVCS_CLIENTURL = https: // northcentralus.api.cognitive.microsoft.com/
+COGSVCS_KEY = b6ad94a507ae41a2bdbd2ee3ad27de8f
 
 # Create vision_client
+vision_credentials = CognitiveServicesCredentials(COGSVCS_KEY)
+vision_client = ComputerVisionClient(COGSVCS_CLIENTURL, vision_credentials)
 
 # Create face_client
 
@@ -36,8 +43,11 @@ def translate():
     messages = []
 
     # TODO: Add code to retrieve text from picture
+    messages = extract_text_from_image(image.blob, vision_client)
 
     # TODO: Add code to translate text
+    messages = translate_text(
+        messages, target_language, COGSVCS_KEY, COGSVCS_REGION)
 
     return render_template("translate.html", image_uri=image.uri, target_language=target_language, messages=messages)
 
@@ -89,3 +99,58 @@ def get_image(request):
         return Image(request.files["file"])
     else:
         return Image()
+
+
+# Function that extracts text from images
+
+def extract_text_from_image(image, client):
+    try:
+        result = client.recognize_printed_text_in_stream(image=image)
+
+        lines = []
+        if len(result.regions) == 0:
+            lines.append("Photo contains no text to translate")
+
+        else:
+            for line in result.regions[0].lines:
+                text = " ".join([word.text for word in line.words])
+                lines.append(text)
+
+        return lines
+
+    except ComputerVisionErrorException as e:
+        return ["Computer Vision API error: " + e.message]
+
+
+def translate_text(lines, target_language, key, region):
+    uri = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=" + target_language
+
+    headers = {
+        'Ocp-Apim-Subscription-Key': key,
+        'Ocp-Apim-Subscription-Region': region,
+        'Content-type': 'application/json'
+    }
+
+    input = []
+
+    for line in lines:
+        input.append({"text": line})
+
+    try:
+        response = requests.post(uri, headers=headers, json=input)
+        response.raise_for_status()  # Raise exception if call failed
+        results = response.json()
+
+        translated_lines = []
+
+        for result in results:
+            for translated_line in result["translations"]:
+                translated_lines.append(translated_line["text"])
+
+        return translated_lines
+
+    except requests.exceptions.HTTPError as e:
+        return ["Error calling the Translator Text API: " + e.strerror]
+
+    except Exception as e:
+        return ["Error calling the Translator Text API"]
