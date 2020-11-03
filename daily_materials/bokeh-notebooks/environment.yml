@@ -1,0 +1,22 @@
+name: bokeh
+
+channels:
+  - bokeh
+  - conda-forge
+
+dependencies:
+  - python=3.7
+  - numpy
+  - notebook
+  - bokeh>=2.1
+  - pandas
+  - scipy
+  - selenium
+  - datashader
+  - networkx
+  - flask
+  - firefox
+  - geckodriver
+  - holoviews
+  - hvplot
+  - jupyter_contrib_nbextensions
