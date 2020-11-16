@@ -18,7 +18,7 @@
 - We can simply [use the `Create R Model` module](https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/create-r-model) to use any R machine learning library and the associated algorithms.
 - We are going to be working with the Bike Sharing Dataset which is a great dataset to explore [Azure ML Studio's `Execute R Script`](https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/execute-r-script) and Create R Model modules. 
 - The Bike Sharing dataset has 10,886 observations, each one pertaining to a specific hour from the first 19 days of each month from 2011 to 2012. The dataset consists of 11 columns that record information about bike rentals.
-- [Link to Data](https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset)
+- [Link to Data](https://github.com/daniel-dc-cd/data_science/blob/master/daily_materials/bike_rental_predictor/data:Bike_Sharing_Dataset.csv)
 
 
 ### Task 2: Feature Engineering and Preprocessing
