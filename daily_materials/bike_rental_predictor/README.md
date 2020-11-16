@@ -3,7 +3,9 @@
 
 ## Project Objectives
 
-- Train and evaluate a regression model on Azure ML Studio.
+- Get some more experience using a cloud based ML tool.
+- Mix skills we have learned.
+- Explore some of the new features of the ML studio.
 - Perform feature Engineering and data preprocessing using custom R scripts.
 - Write custom machine learning models in R.
 
