@@ -1,1 +1,34 @@
-Users/danieloostra/data_sci_bootcamp/data_science/daily_materials/09_13_2020/
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+ 
+# OS generated files #
+######################
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+*.DS_Store
+ 
+# Xcode
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
+ 
+ 
+# IDE
+*.idea
+*.iml
+*.ipynb_checkpoints
+ 
+# Generated files
+/web-app/WEB-INF
+build/
+*.[oa]
+*.pyc
