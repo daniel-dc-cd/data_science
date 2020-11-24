@@ -1,0 +1,10 @@
+title: "Machine Learning Predicting Diamond Cut"
+author: "Dan Oostra for SDA/Coding DOjo"
+date: "November 23, 2020"
+
+---
+```{r}
+library(neuralnet)
+library(caret)
+library(tidyverse)
+```
